@@ -11,16 +11,13 @@
 #include <string.h>
 #include <math.h>
 
-#define NUMB 600851475143
+#define NUM 600851475143
 
 int main( int argc, char **argv )
 {
 	int largest_prime;
-	unsigned long long num = NUMB;
-	// need to replace instances of NUM with num or bound
-	// also need to create a bound function that'll take the
-	// sqrt of an unsigned long long
-	int bound = (int) sqrt( NUM );
+	unsigned long long num = NUM;
+	long bound = (long) sqrt( num );
 	int prime_factors[ bound ];
 	int i, j;
 
@@ -29,7 +26,7 @@ int main( int argc, char **argv )
 	prime_factors[1] = -1; //-1 used as null terminator
 
 	for( i = 2; i < bound; i++ ) {
-		if( NUM % i == 0 ) {
+		if( num % i == 0 ) {
 			for( j = 1; i % prime_factors[j] != 0; j++ )
 				;
 
@@ -45,6 +42,7 @@ int main( int argc, char **argv )
 
 	largest_prime = prime_factors[--i];
 
-	printf( "the largest prime factor of %d is %d\n", NUM, largest_prime );
+	printf( "\nThe largest prime factor" );
+	printf( " of %llu is %d\n", num, largest_prime );
 	return 0;
 }
