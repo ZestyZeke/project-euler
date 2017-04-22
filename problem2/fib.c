@@ -38,7 +38,7 @@ int main( int argc, char **argv )
 		second = third;
 	}
 
-	printf( "the sum of even valued fibonacci terms under %d ", bound );
-	printf( "is %d\n", sum );
+	printf( "\nthe sum of even valued fibonacci terms under %d ", bound );
+	printf( "is %d\n\n", sum );
 	return 0;
 }

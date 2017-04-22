@@ -22,8 +22,8 @@ int main( int argc, char **argv )
 			sum += i;
 	}
 
-	printf( "the sum of all multiples of 3 and 5 below 1000" );
-	printf( " is %d\n" , sum );
+	printf( "\nthe sum of all multiples of 3 and 5 below 1000" );
+	printf( " is %d\n\n" , sum );
 
 	return 0;
 }

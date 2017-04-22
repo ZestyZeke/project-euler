@@ -43,6 +43,6 @@ int main( int argc, char **argv )
 	largest_prime = prime_factors[--i];
 
 	printf( "\nThe largest prime factor" );
-	printf( " of %llu is %d\n", num, largest_prime );
+	printf( " of %llu is %d\n\n", num, largest_prime );
 	return 0;
 }

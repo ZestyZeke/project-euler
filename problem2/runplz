@@ -2,4 +2,4 @@
 
 # a Simple Bash Script to run my solution
 
-make && ./p3 && make clean
+make && ./fib 4000000 && make clean
