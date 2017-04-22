@@ -1,0 +1,5 @@
+#!/bin/bash
+
+# a simple bash script to run fib.c
+
+gcc fib.c && ./a.out 4000000
