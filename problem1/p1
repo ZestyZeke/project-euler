@@ -1,0 +1,5 @@
+#!/bin/bash
+
+# simple bash script to build and run p1.c
+
+gcc p1.c && ./a.out
