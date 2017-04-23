@@ -1,0 +1,5 @@
+#!/bin/bash
+
+# a Simple Bash Script to run my solution
+
+make && java Fib 4000000 && make clean
