@@ -9,16 +9,31 @@ I have a bash script called runplz that compiles executes and cleans
 each folders source files.
 
 problem1:
-    DONE
+    c      = DONE
+    cpp    = DONE
+    java   = DONE
+    python = NOPE
 
 problem2:
-    DONE
+    c      = DONE
+    cpp    = DONE
+    java   = DONE
+    python = NOPE
 
 problem3:
-    DONE
+    c      = DONE
+    cpp    = NOPE
+    java   = NOPE
+    python = NOPE
 
 problem4:
-    DONE
+    c      = DONE
+    cpp    = NOPE
+    java   = NOPE
+    python = NOPE
 
 problem5:
-    DONE
+    c      = DONE
+    cpp    = DONE
+    java   = DONE
+    python = NOPE

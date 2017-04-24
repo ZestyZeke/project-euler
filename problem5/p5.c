@@ -21,27 +21,21 @@ int main( int argc, char **argv )
 	int bound;
 	int isDivis;
 
-	if( argc == 2 )
-		bound = atoi( argv[1] );
-	else
-		bound = BOUND;
-
-	int div_list[ BOUND ];
-	for( i = 1; i <= BOUND; i++ )
-		div_list[i - 1] = i;
+	(argc == 2) ? (bound = atoi(argv[1])) : (bound = BOUND);
 
 	num = 3; //semi random starting point
 	isDivis = 0;
-	while( !isDivis ) {
-		num++;
+	while( !isDivis && num++ ) {
 		isDivis = 1;
-		for( i = 0; i < BOUND; i++ ) {
-			if( num % div_list[i] != 0 )
+		for( i = 1; i <= bound; i++ ) {
+			if( num % i != 0 ) {
 				isDivis = 0;
+				break;
+			}
 		}
 	}
 
 	printf( "\nThe smallest number that is evenly divisible by all of " );
-	printf( "the numbers from 1 to %d is %d\n\n", BOUND, num );
+	printf( "the numbers from 1 to %d is %d\n\n", bound, num );
 	return 0;
 }
