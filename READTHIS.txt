@@ -1,0 +1,27 @@
+
+for this assignment
+
+useful stuff
+
+fs/ext2/
+
+tons of functions in here for making
+and using the ext2 filesystem. Could
+be really useful!!!
+
+Documentation/filesystems/vfs.txt
+
+Info on vfs implementation stuff.
+
+include/linux/ext2_fs.h
+
+Structures for ext2
+On second thought, doesn't have much.
+
+include/linux/fs.h
+
+inodes structs and stuff are defined here.
+
+include/linux/buffer_head.h
+
+buffer_head stuff
