@@ -44,3 +44,10 @@ Problem 5
 - [x] C++
 - [x] Java
 - [ ] Python
+
+Problem 6
+---------
+- [x] C
+- [ ] C++
+- [ ] Java
+- [ ] Python
