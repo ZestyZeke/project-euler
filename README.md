@@ -2,7 +2,7 @@
 
 ## Contributors: Zeke Reyna, Moses Franco
 
-This is just a fun little project from this [page.](projecteuler.net)
+This is just a fun little project from this [page.](https://projecteuler.net)
 
 To run any of the solutions, go into each folder and run:
 $ ./runplz
