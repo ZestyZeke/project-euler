@@ -2,11 +2,13 @@
 
 ## Contributors: Zeke Reyna, Moses Franco
 
+This is just a fun little project from this [page.](projecteuler.net)
+
 To run any of the solutions, go into each folder and run:
 $ ./runplz
 
-I have a bash script called runplz that compiles executes and cleans
-each folders source files.
+I have a bash script called runplz that compiles, executes and cleans
+each folders' source files.
 
 Problem 1
 ---------
