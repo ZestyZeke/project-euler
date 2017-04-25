@@ -8,21 +8,30 @@ public class P7
                 System.out.print( line );
         }
 
+        // upper bound should be n*(ln(ln(n)) + ln(n))
+        public static int find_bound( int n )
+        {
+                int term1, term2;
+                
+                term1 = (int) (n * Math.log( n ) );
+                term2 = (int) (n * Math.log( Math.log( n ) ) );
+
+                return term1 + term2;
+        }
+
         public static void main( String args[] )
         {
                 
-                ArrayList<Integer> nums = new ArrayList<Integer>();
                 int i, n, j;
                 int bound;
+                ArrayList<Integer> nums = new ArrayList<Integer>();
 
                 if( args.length == 1 )
                         n = Integer.parseInt( args[ 0 ] );
                 else
                         n = 10001;
 
-                bound = (int) (n * Math.log( n ));
-                bound += (n * Math.log( Math.log( n ) )); 
-                // upper bound should be n*(ln(ln(n)) + ln(n))
+                bound = find_bound( n );
 
                 // maybe bound should be inclusive?
                 for( i = 2; i < bound; i++ ) {
