@@ -51,3 +51,17 @@ Problem 6
 - [ ] C++
 - [ ] Java
 - [ ] Python
+
+Problem 7
+---------
+- [ ] C
+- [ ] C++
+- [x] Java
+- [ ] Python
+
+Problem 8
+---------
+- [ ] C
+- [ ] C++
+- [ ] Java
+- [ ] Python
