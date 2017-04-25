@@ -67,6 +67,8 @@ int main( int argc, char **argv )
 	// to use a linked list of sorts.
 	// need to make num_list into a true list,
 	// with a list_del functionality
+	// another language might be easier, in Java or C++ could use either
+	// Arraylists or make a num_list object. Could do both!!
 	for( i = 0; i < (int) sqrt( upperbound ); i++ ) {
 		// go through num_list checking if things are divisible by i
 		// remove from list and continue
