@@ -72,3 +72,10 @@ Problem 9
 - [ ] C++
 - [ ] Java
 - [ ] Python
+
+Problem 10
+---------
+- [ ] C
+- [ ] C++
+- [x] Java
+- [ ] Python
