@@ -8,7 +8,7 @@
 
 #include <iostream>
 
-#define BOUND 1000
+#define BOUND 10
 
 using namespace std;
 
@@ -16,9 +16,9 @@ int main( int argc, char **argv )
 {
 	int sum;
 	int i;
-	int bound = BOUND;
-	if( argc == 2 )
-		bound = atoi( argv[1] );
+	int bound;
+
+	(argc == 2) ? (bound = atoi( argv[1] )) : (bound = BOUND);
 
 	sum = 0;
 	for( i = 0; i < bound; i++ ) {

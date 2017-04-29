@@ -8,16 +8,20 @@
 
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 
-#define BOUND 1000
+#define BOUND 10
 
 int main( int argc, char **argv )
 {
 	int sum;
 	int i;
+	int bound;
+
+	(argc == 2) ? (bound = atoi( argv[1] )) : (bound = BOUND);
 
 	sum = 0;
-	for( i = 0; i < BOUND; i++ ) {
+	for( i = 0; i < bound; i++ ) {
 		if( i % 3 == 0 || i % 5 == 0 )
 			sum += i;
 	}
