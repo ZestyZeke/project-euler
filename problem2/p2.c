@@ -21,8 +21,7 @@ int main( int argc, char **argv )
 	int third;
 	int sum;
 	int bound;
-	//bound = BOUND;
-	//bound = atoi( argv[1] );
+
 	(argc == 2) ? (bound = atoi(argv[1]) ) : (bound = BOUND);
 
 	first = 1;
