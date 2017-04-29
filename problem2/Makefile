@@ -1,11 +1,11 @@
-CC = gcc
+TARGET=p2
 
-CFLAGS = -g -Wall
+CC 		= gcc
+CFLAGS  = -g -Wall
 LDFLAGS = -g
+LDLIBS  = 
 
-LDLIBS = 
-
-fib:
+$(TARGET):
 
 clean:
-	rm -f a.out fib fib.o
+	rm -f a.out *o $(TARGET)
