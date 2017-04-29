@@ -22,7 +22,7 @@ Problem 2
 - [x] C
 - [x] C++
 - [x] Java
-- [ ] Python
+- [x] Python
 
 Problem 3
 ---------
