@@ -15,7 +15,7 @@ Problem 1
 - [x] C
 - [x] C++
 - [x] Java
-- [ ] Python
+- [x] Python
 
 Problem 2
 ---------
