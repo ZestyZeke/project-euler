@@ -2,4 +2,4 @@
 
 # a Simple Bash Script to run my solution
 
-make && java Fib 4000000 && make clean
+make && java P2 4000000 && make clean
