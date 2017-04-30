@@ -14,3 +14,7 @@ prime problems: use Iterator on C++/Java
 Write a list structure for C, maybe other languages too.
 
 Need more data structures and stuff
+
+Need to go through problem 3 solutions. Maybe try an actual
+factorization method rather than BFS/ 
+Java/C++/Python not sure if work. 
