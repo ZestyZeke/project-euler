@@ -9,6 +9,7 @@
 
 #include <iostream>
 #include <string>
+#include <algorithm>
 
 #define SIZE 100
 #define LOWERBOUND 100
@@ -21,8 +22,27 @@ int check_if_pal( int i, int j )
 	string num = to_string( i * j );
 	string front;
 	string end;
+    int half_length;
+    int retval;
 
-	if( num.length() % 2 == 0 )
+    half_length = num.length() / 2;
+
+	if( num.length() % 2 == 0 ) {
+            front = num.substr( 0, half_length );
+            end   = num.substr( half_length, half_length );
+    } else {
+            front = num.substr( 0, half_length );
+            end   = num.substr( half_length + 1, half_length );
+    }
+
+    reverse( end.begin(), end.end() );
+
+    if( front == end )
+            retval = i * j;
+    else
+            retval = -1;
+
+    return retval;
 }
 
 int main( int argc, char **argv )
