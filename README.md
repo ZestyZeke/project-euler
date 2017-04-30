@@ -27,16 +27,16 @@ Problem 2
 Problem 3
 ---------
 - [x] C
-- [ ] C++
-- [ ] Java
-- [ ] Python
+- [x] C++
+- [x] Java
+- [x] Python
 
 Problem 4
 ---------
 - [x] C
-- [ ] C++
-- [ ] Java
-- [ ] Python
+- [x] C++
+- [x] Java
+- [x] Python
 
 Problem 5
 ---------
