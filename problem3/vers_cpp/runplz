@@ -1,0 +1,5 @@
+#!/bin/bash
+
+# a Simple Bash Script to run my solution
+
+make && ./p3 600851475143 && make clean
