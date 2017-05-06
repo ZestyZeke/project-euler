@@ -4,6 +4,7 @@
 #
 # Finds the greatest prime divisor of a number
 import sys
+import math
 
 def main( argv ):
 
@@ -15,7 +16,7 @@ def main( argv ):
     prime_factors = []
     prime_factors.append( 2 )
 
-    for i in range(2, num):
+    for i in range(2, int(math.sqrt( num ) )):
 
         if( num % i != 0):
             continue
