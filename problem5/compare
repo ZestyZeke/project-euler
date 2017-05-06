@@ -3,7 +3,7 @@
 # A bash script for comparing the runtime of
 # various solutions in different languages
 
-rm compare.txt
+[ -e compare.txt ] && rm compare.txt
 
 # C solution, includes compile, execution,
 # and cleanup

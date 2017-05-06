@@ -27,7 +27,7 @@ public class P5
                                 }
                         }
                 }
-                print("\nThe smallest number that is evenly divisible by all of ");
-                print("the numbers from 1 to "+bound+" is "+num+"\n\n");
+                print("\nThe smallest number that is evenly divisible by all of");
+                print(" the numbers from 1 to "+bound+" is "+num+"\n\n");
         }
 }
