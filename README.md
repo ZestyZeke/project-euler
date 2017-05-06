@@ -43,7 +43,7 @@ Problem 5
 - [x] C
 - [x] C++
 - [x] Java
-- [ ] Python
+- [x] Python
 
 Problem 6
 ---------
