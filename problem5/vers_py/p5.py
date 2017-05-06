@@ -6,8 +6,10 @@
 # divisible by all of the numbers from 1 to 20?
 
 import sys
+import time
 
 def main( argv ):
+    start_time = time.time()
 
     if len( argv ) == 2:
         bound = int( argv[1] )
@@ -30,5 +32,6 @@ def main( argv ):
 
     print( "\nThe smallest number that is evenly divisible by all of ",
            "the numbers from 1 to ", bound, " is ", num, "\n" )
+    print( "--- %s seconds ---" % (time.time() - start_time ) )
 
 main( sys.argv )
