@@ -43,6 +43,7 @@ int main( int argc, char **argv )
 
 	fp = fopen( "num.txt", "r" );
 	fgets( buffer, BUF_SIZE, fp );
+	fclose( fp );
 
 	largest_product = -1;
 	for( i = 0; buffer[ i + adj ] != '\0'; i++ ) {
