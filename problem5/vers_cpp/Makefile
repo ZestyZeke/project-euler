@@ -1,10 +1,13 @@
-CC = g++
+TARGET	= p5
 
-CFLAGS = -g -Wall
-CXXFLAGS = -g -Wall
+CC 		= gcc
+CXX		= g++
+CFLAGS  = -g -Wall
+CXXFLAGS= -g -Wall
 LDFLAGS = -g
+LDLIBS  =
 
-p5:
+$(TARGET):
 
 clean:
-	rm -f a.out p5.o p5
+	rm -f a.out $(TARGET) *.o
