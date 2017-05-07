@@ -2,4 +2,4 @@
 
 # a Simple Bash Script to run my solution
 
-make && ./p8 && make clean
+make && ./p8 13 && make clean
