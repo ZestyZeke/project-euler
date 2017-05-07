@@ -1,11 +1,11 @@
-CC = gcc
+TARGET	= p6
 
-CFLAGS = -g -Wall
+CC 		= gcc
+CFLAGS  = -g -Wall
 LDFLAGS = -g
+LDLIBS  =
 
-LDLIBS =
-
-p6:
+$(TARGET):
 
 clean:
-	rm -f a.out p6 p6.o
+	rm -f a.out $(TARGET) *.o
