@@ -57,10 +57,10 @@ Problem 6
 
 Problem 7
 ---------
-- [ ] C
-- [ ] C++
+- [x] C
+- [x] C++
 - [x] Java
-- [ ] Python
+- [x] Python
 
 Problem 8
 ---------
