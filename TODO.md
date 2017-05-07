@@ -9,6 +9,10 @@ Rewrite Makefiles?
 Optimize Solutions/Clean Code:
 P10: runs super slow.
 
+P7: Finish cpp version with forward list, nested iterators. Get python
+working too, and then run compare script to log times. So far C feels much
+faster than Java.
+
 prime problems: use Iterator on C++/Java
 
 Write a list structure for C, maybe other languages too.
