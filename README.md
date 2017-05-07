@@ -10,6 +10,9 @@ $ ./runplz
 I have a bash script called runplz that compiles, executes and cleans
 each folders' source files.
 
+Also, a recent addition: in Problem 3 directory there is a bash script
+'compare' that runs the different language solutions and records time.
+
 Problem 1
 ---------
 - [x] C
