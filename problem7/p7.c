@@ -12,14 +12,6 @@
 
 #define BOUND 7
 
-int generate_lower( int n )
-{
-	double term1, term2;
-	term1 = n * log( n );
-	term2 = n * ( log( log( n ) ) - 1 );
-	return (int) (term1 + term2 + 1); // bounds are exclusive
-}
-
 int generate_upper( int n )
 {
 	double term1, term2;
@@ -28,51 +20,54 @@ int generate_upper( int n )
 	return (int) (term1 + term2); // bounds are exclusive
 }
 
-// 1 if prime, 0 if not
-int isPrime( int i )
+// list of nums to sieve through
+void generate_nums( int nums[], int size )
 {
-	int j;
-	int bound;
-	int retval;
+	int i;
+	for( i = 2; i < size + 2; i++ )
+		nums[i - 2] = i;
+}
 
+int sieve( int nums[], int nums_size, int n )
+{
+	int i, j;
+	int temp_n, temp_prime;
 
-	bound = (int) sqrt( i ) + 1;
-	retval = 1;
-	for( j = 2; j < bound; j++ ) {
-		if( i % j == 0 ) {
-			retval = 0;
-			break;
+	temp_n = 1;
+	for( i = 0; i < nums_size && temp_n <= n; i++ ) {
+
+		if( nums[i] == -1 )
+			continue;
+
+		temp_prime = nums[ i ];
+		for( j = i + 1; j < nums_size; j++ ) {
+			if( nums[j] % temp_prime == 0 )
+				nums[j] = -1; // essentially NULL
 		}
+		temp_n++;
 	}
-	return retval;
+	return nums[--i];
 }
 
 int main( int argc, char **argv )
 {
-	/*
-	 * nth prime number will be between the bounds
-	 * n ln(n) + n(ln(ln(n))-1) and
-	 * n ln(n) + n(ln(ln(n))) for n >= 6
-	 */
-
-	int lowerbound, upperbound;
-	int i;
-	int n, prime;
+	int n;
+	int upperbound;
+	int nth_prime;
 
 	(argc == 2) ? (n = atoi(argv[1])) : (n = BOUND);
 
-	lowerbound = generate_lower( n );
 	upperbound = generate_upper( n );
 
-	prime = -1;
-	for( i = lowerbound; i <= upperbound; i++ ) {
-		if( isPrime( i ) ) {
-			prime = i; // an extra variable is unnecessary
-			break;
-		}
-	}
+	// can generate a ton of numbers and seive through them,
+	// by placing -1's in place of nums that are composite
 
-	printf( "\n bounds are %d and %d\n", lowerbound, upperbound );
-	printf( "\nThe %dth prime number is %d\n\n", n, prime );
+	int nums[ upperbound ];
+	generate_nums( nums, upperbound );
+
+	nth_prime = sieve( nums, upperbound, n );
+
+	printf( "\nThe %dth prime number is %d\n\n", n, nth_prime );
+
 	return 0;
 }

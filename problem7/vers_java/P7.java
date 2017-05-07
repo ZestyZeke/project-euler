@@ -25,6 +25,7 @@ public class P7
                 int i, n, j;
                 int bound;
                 ArrayList<Integer> nums = new ArrayList<Integer>();
+                // could be done with an Array might be faster
 
                 if( args.length == 1 )
                         n = Integer.parseInt( args[ 0 ] );
