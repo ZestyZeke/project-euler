@@ -51,9 +51,9 @@ Problem 5
 Problem 6
 ---------
 - [x] C
-- [ ] C++
-- [ ] Java
-- [ ] Python
+- [x] C++
+- [x] Java
+- [x] Python
 
 Problem 7
 ---------
