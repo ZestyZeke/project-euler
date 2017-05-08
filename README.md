@@ -72,9 +72,9 @@ Problem 8
 Problem 9
 ---------
 - [x] C
-- [ ] C++
-- [ ] Java
-- [ ] Python
+- [x] C++
+- [x] Java
+- [x] Python
 
 Problem 10
 ---------
