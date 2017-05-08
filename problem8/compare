@@ -15,8 +15,8 @@ printf "This is the C solutions time:\n" >> compare.txt
 #cd vers_py && (time ./runplz) 2>> ../compare.txt && cd ..
 
 # fuck it, let's time Java as well
-#printf "\nThis is the Java solutions time:\n" >> compare.txt
-#cd vers_java && (time ./runplz) 2>> ../compare.txt && cd ..
+printf "\nThis is the Java solutions time:\n" >> compare.txt
+cd vers_java && (time ./runplz) 2>> ../compare.txt && cd ..
 
 # Aaand let's have C++ as well while we're at it.
 printf "\nThis is the C++ solutions time:\n" >> compare.txt
