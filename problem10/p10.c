@@ -34,9 +34,9 @@ void sieve_nums( int nums[], int size )
 	}
 }
 
-long sum_nums( int nums[], int size )
+unsigned long long sum_nums( int nums[], int size )
 {
-	long sum;
+	unsigned long long sum;
 	int i;
 
 	sum = 0;
@@ -51,7 +51,7 @@ long sum_nums( int nums[], int size )
 int main( int argc, char **argv )
 {
 	int n;
-	long sum;
+	unsigned long long sum;
 
 	(argc == 2) ? (n = atoi(argv[1])) : (n = BOUND_DEF);
 
@@ -61,7 +61,7 @@ int main( int argc, char **argv )
 	sum = sum_nums( nums, n - 2 );
 
 	printf("\nThe sum of the primes below %d", n );
-	printf(" is %ld\n\n", sum );
+	printf(" is %llu\n\n", sum );
 
 	return 0;
 }

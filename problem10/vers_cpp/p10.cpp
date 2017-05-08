@@ -33,9 +33,9 @@ void generate_primes( vector<int>& primes, int bound )
         }
 }
 
-long sum_primes( vector<int>& primes )
+unsigned long long sum_primes( vector<int>& primes )
 {
-        long sum;
+        unsigned long long sum;
 
         sum = 0;
         for( auto iter = primes.begin(); iter != primes.end(); iter++ ) {
@@ -48,7 +48,7 @@ long sum_primes( vector<int>& primes )
 int main( int argc, char **argv )
 {
         int n;
-        long sum;
+        unsigned long long sum;
         vector<int> primes;
 
         (argc == 2) ? (n = stoi(argv[1])) : (n = BOUND_DEF);

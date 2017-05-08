@@ -34,6 +34,6 @@ void sieve_nums( int nums[], int size );
 /*
  * sums all the numbers in int array that aren't -1
  */
-long sum_nums( int nums[], int size );
+unsigned long long sum_nums( int nums[], int size );
 
 #endif
