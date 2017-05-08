@@ -66,8 +66,8 @@ Problem 8
 ---------
 - [x] C
 - [x] C++
-- [ ] Java
-- [ ] Python
+- [x] Java
+- [x] Python
 
 Problem 9
 ---------
