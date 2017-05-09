@@ -21,3 +21,7 @@ cd vers_java && (time ./runplz) 2>> ../compare.txt && cd ..
 # Aaand let's have C++ as well while we're at it.
 printf "\nThis is the C++ solutions time:\n" >> compare.txt
 cd vers_cpp && (time ./runplz) 2>> ../compare.txt && cd ..
+
+#For this one only, the optimized C solution.
+printf "\nThis is the optimized C solutions time:\n" >> compare.txt
+cd vers_alt && (time ./runplz-alt) 2>> ../compare.txt && cd ..
