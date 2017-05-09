@@ -1,0 +1,3 @@
+#!/bin/bash
+
+make && ./p10-alt 2000000 && make clean

@@ -1,4 +1,5 @@
-TARGET  = p10
+#TARGET  = p10
+TARGET  = p10-alt
 
 CC 		= gcc
 CFLAGS  = -g -Wall
