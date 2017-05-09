@@ -89,3 +89,17 @@ Problem 11
 - [ ] C++
 - [ ] Java
 - [ ] Python
+
+Problem 12
+---------
+- [x] C
+- [ ] C++
+- [ ] Java
+- [ ] Python
+
+Problem 13
+---------
+- [ ] C
+- [ ] C++
+- [ ] Java
+- [ ] Python
