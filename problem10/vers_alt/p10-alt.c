@@ -24,17 +24,17 @@ void generate_list( int primes[], int size )
 
 int generate_bound( int n )
 {
-	return (int) ((double)n / (log(n) - 1.1));
+	return (int) (((double)n) / (log(n) - 1.1));
 }
 
-void sieve( int primes[], int size )
+void sieve( int primes[], int size, int bound )
 {
 	int num; // integers to possibly add
 	int i; // for iterating primes[]
 	int pos; // "position in primes[]"
 	int isPrime;
 
-	for( num = 2, pos = 0; pos < size && num < size; num++ ) {
+	for( num = 2, pos = 0; pos < size && num < bound; num++ ) {
 
 		isPrime = 1;
 		for( i = 0; primes[i] != 0 && isPrime; i++ ) {
@@ -76,7 +76,7 @@ int main( int argc, char **argv )
 	//int primes[ size ] = { 0 }; //initialize with all vals as 0
 	int primes[size];
 	generate_list( primes, size );
-	sieve( primes, size );
+	sieve( primes, size, n );
 	sum = sum_primes( primes, size );
 
 	printf("\nThe sum of the primes below %d", n );
