@@ -34,7 +34,7 @@ void sieve( int primes[], int size )
 	int pos; // "position in primes[]"
 	int isPrime;
 
-	for( num = 2, pos = 0; pos < size; num++ ) {
+	for( num = 2, pos = 0; pos < size && num < size; num++ ) {
 
 		isPrime = 1;
 		for( i = 0; primes[i] != 0 && isPrime; i++ ) {
@@ -57,7 +57,7 @@ unsigned long long sum_primes( int primes[], int size )
 	int i;
 
 	sum = 0;
-	for( i = 0; i < size; i++ )
+	for( i = 0; primes[i] != 0; i++ )
 		sum += primes[i];
 
 	return sum;
