@@ -138,6 +138,7 @@ int main( int argc, char **argv )
 
 		row++;
 	}
+	fclose( fp );
 
 	largest_adj = diag1( mat );
 
