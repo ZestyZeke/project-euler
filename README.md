@@ -88,14 +88,14 @@ Problem 11
 - [x] C
 - [x] C++
 - [x] Java
-- [ ] Python
+- [x] Python
 
 Problem 12
 ---------
 - [x] C
-- [ ] C++
-- [ ] Java
-- [ ] Python
+- [x] C++
+- [x] Java
+- [x] Python
 
 Problem 13
 ---------
