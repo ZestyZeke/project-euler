@@ -99,7 +99,7 @@ Problem 12
 
 Problem 13
 ---------
-- [ ] C
-- [ ] C++
+- [x] C
+- [x] C++
 - [ ] Java
 - [ ] Python
