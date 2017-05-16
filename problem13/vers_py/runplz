@@ -1,0 +1,5 @@
+#!/bin/bash
+
+# a Simple Bash Script to run my solution
+
+python p13.py

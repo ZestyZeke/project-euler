@@ -101,5 +101,5 @@ Problem 13
 ---------
 - [x] C
 - [x] C++
-- [ ] Java
-- [ ] Python
+- [x] Java
+- [x] Python

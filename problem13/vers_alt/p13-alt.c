@@ -19,7 +19,7 @@ void process(int nums[100][50])
 	FILE *fp;
 	char buffer[BUF_SIZE];
 
-	fp = fopen("num-alt.txt", "r");
+	fp = fopen("../num-alt.txt", "r");
 
 	memset(buffer, 0, BUF_SIZE);
 	for (i = 0; fgets(buffer, BUF_SIZE, fp) != NULL; i++) {

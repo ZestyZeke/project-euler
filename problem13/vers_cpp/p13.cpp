@@ -71,10 +71,8 @@ int main(int argc, char **argv)
         int nums[100][50];
         vector<int> sum;
 
-        cout<<"going to process\n";
         process(nums);
 
-        cout<<"going to sum\n";
         sum_nums(nums, sum);
 
         cout<<"\nThe sum of all those numbers is:\n";
