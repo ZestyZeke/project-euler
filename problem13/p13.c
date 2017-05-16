@@ -9,7 +9,6 @@
 
 #include <stdio.h>
 #include <stdlib.h>
-#include <math.h>
 #include <string.h>
 
 #define BUF_SIZE 4096
@@ -44,6 +43,18 @@ void process(int nums1[BUF_SIZE], int nums2[BUF_SIZE])
 
 }
 
+unsigned long long power(int num, int exp)
+{
+	int i;
+	unsigned long long retval;
+
+	retval = num;
+	for (i = 1; i < exp; i++)
+		retval *= num;
+
+	return retval;
+}
+
 unsigned long long sum_nums(int nums1[BUF_SIZE], int nums2[BUF_SIZE])
 {
 	int i;
@@ -51,12 +62,26 @@ unsigned long long sum_nums(int nums1[BUF_SIZE], int nums2[BUF_SIZE])
 
 	large_sum = 0;
 	for (i = 0; i < BUF_SIZE; i += 50) {
-		large_sum += nums1[i];
+		large_sum += nums1[i] * power(10, 7);
+		large_sum += nums1[i + 1] * power(10, 6);
+		large_sum += nums1[i + 2] * power(10, 5);
+		large_sum += nums1[i + 3] * power(10, 4);
+		large_sum += nums1[i + 4] * power(10, 3);
+		large_sum += nums1[i + 5] * power(10, 2);
+		large_sum += nums1[i + 6] * 10;
+		large_sum += nums1[i + 7];
 	}
 
 	i--; // because i - BUF_SIZE gives the ith position not position i
-	for (i -= BUF_SIZE; nums2[i] != -1; i += 50) {
-		large_sum += nums2[i];
+	for (i %= BUF_SIZE; nums2[i] != -1; i += 50) {
+		large_sum += nums2[i] * power(10, 7);
+		large_sum += nums2[i + 1] * power(10, 6);
+		large_sum += nums2[i + 2] * power(10, 5);
+		large_sum += nums2[i + 3] * power(10, 4);
+		large_sum += nums2[i + 4] * power(10, 3);
+		large_sum += nums2[i + 5] * power(10, 2);
+		large_sum += nums2[i + 6] * 10;
+		large_sum += nums2[i + 7];
 	}
 
 	return large_sum;
