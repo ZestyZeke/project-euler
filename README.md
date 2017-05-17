@@ -103,3 +103,10 @@ Problem 13
 - [x] C++
 - [x] Java
 - [x] Python
+
+Problem 14
+---------
+- [x] C
+- [x] C++
+- [x] Java
+- [x] Python
