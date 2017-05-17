@@ -25,6 +25,7 @@ public class P13
                         while ((line = rdr.readLine()) != null) {
                                 sum = sum.add(new BigInteger(line));
                         }
+                        rdr.close();
                         return sum;
 
                 } catch (IOException e) {
