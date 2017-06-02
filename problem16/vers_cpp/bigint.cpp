@@ -7,12 +7,15 @@
  * work.
  *
  * Idea, is to hold 2 digits in each char.
+ *
+ * Problems: for some reason, 0 is not printing, but everything else seems to
+ * print fine.
  */
 
 #include "bigint.h"
 
-// default constructor
-// puts a zero
+using namespace std;
+
 BigInt::BigInt()
 {
         // make sure it is empty... might be unecessary
@@ -27,7 +30,6 @@ BigInt::BigInt()
 }
 
 
-// constructor
 BigInt::BigInt(unsigned long long num)
 {
         // make sure it is empty... might be unecessary
@@ -37,6 +39,7 @@ BigInt::BigInt(unsigned long long num)
         char remainder;
         while (num > 0) {
                 remainder = num % BASE_SIZE;
+                cout<<(int)remainder<<"\n";
                 num /= BASE_SIZE;
 
                 digits.insert(digits.begin(), remainder);
@@ -45,20 +48,19 @@ BigInt::BigInt(unsigned long long num)
         //reverse(digits.begin(), digits.end());
 }
 
-// destructor
 BigInt::~BigInt()
 {
         // vector destructor should be implicitly called
+        //if (!digits.empty())
+        //        digits.clear();
 }
 
-// copy constructor
 BigInt::BigInt(const BigInt& num)
 {
         for (auto iter = num.digits.begin(); iter != num.digits.end(); iter++)
                 digits.push_back(*iter);
 }
 
-// copy assignment
 BigInt& BigInt::operator=(const BigInt& rhs)
 {
         if (this == &rhs)
@@ -73,10 +75,9 @@ BigInt& BigInt::operator=(const BigInt& rhs)
         return *this;
 }
 
-// operator+
 BigInt operator+(const BigInt& n1, const BigInt& n2)
 {
-        BigInt temp; // default constructor puts a zero.
+        BigInt temp;
         if (!temp.digits.empty())
                 temp.digits.clear();
 
@@ -129,7 +130,6 @@ BigInt operator+(const BigInt& n1, const BigInt& n2)
         return temp;
 }
 
-// operator-
 BigInt operator-(const BigInt& n1, const BigInt& n2)
 {
         cout<<"this function doesnt currently work\n";
@@ -141,10 +141,11 @@ BigInt operator-(const BigInt& n1, const BigInt& n2)
                 return temp;
         }
 
+        // need to do subtraction algorithm.
+
         return temp;
 }
 
-// operator*
 BigInt operator*(const BigInt& n1, const BigInt& n2)
 {
         cout<<"this function doesn't work yet\n";
@@ -152,7 +153,6 @@ BigInt operator*(const BigInt& n1, const BigInt& n2)
         return temp;
 }
 
-// operator/
 BigInt operator/(const BigInt& n1, const BigInt& n2)
 {
         cout<<"this function doesn't work yet\n";
@@ -160,7 +160,6 @@ BigInt operator/(const BigInt& n1, const BigInt& n2)
         return temp;
 }
 
-// put-to operator
 ostream& operator<<(ostream& os, const BigInt& num)
 {
         //string output;
@@ -169,23 +168,22 @@ ostream& operator<<(ostream& os, const BigInt& num)
                 // replace with variable or BASE_SIZE;
                 if (*iter < DIGIT_SIZE) {
                         if (iter != num.digits.begin())
-                                os << '0';
-                        os << *iter + '0';
+                                os << (int) 0 /*'0'*/;
+                        os << (int) (*iter /*+ '0'*/);
 
                 } else { // 10 <= *iter < 100
                         char first_digit, second_digit;
                         first_digit  = *iter / DIGIT_SIZE;
                         second_digit = *iter % DIGIT_SIZE;
 
-                        os << first_digit  + '0';
-                        os << second_digit + '0';
+                        os << (int) (first_digit  /*+ '0'*/);
+                        os << (int) (second_digit /*+ '0'*/);
                 }
         }
 
         return os;
 }
 
-// get-from operator
 istream& operator>>(istream& is, const BigInt& num)
 {
         return is;
@@ -210,7 +208,7 @@ int operator<(const BigInt& n1, const BigInt& n2)
                         return 1;
         }
 
-        return 0; // for if they are equal
+        return 0; // for if n1 == n2
 }
 
 int operator>(const BigInt& n1, const BigInt& n2)
@@ -232,30 +230,42 @@ int operator>(const BigInt& n1, const BigInt& n2)
                         return 0;
         }
 
-        return 0; // for if they are equal
+        return 0; // for if n1 == n2
 }
 
 int operator==(const BigInt& n1, const BigInt& n2)
 {
+        if (n1.digits.size() != n2.digits.size())
+                return 0;
+
+        auto iter1 = n1.digits.begin();
+        auto iter2 = n2.digits.begin();
+
+        for (; iter1 != n1.digits.end() && iter2 != n2.digits.end();
+                                                    iter1++, iter2++) {
+                if (*iter1 != *iter2)
+                        return 0;
+        }
+
+        return 1; // for if n1 == n2
 }
 
-// operator+=
 BigInt& BigInt::operator+=(const BigInt& num)
 {
+        return *this;
 }
 
-// operator-=
 BigInt& BigInt::operator-=(const BigInt& num)
 {
+        return *this;
 }
 
-// operator*=
 BigInt& BigInt::operator*=(const BigInt& num)
 {
+        return *this;
 }
 
-// operator/=
 BigInt& BigInt::operator/=(const BigInt& num)
 {
+        return *this;
 }
-
