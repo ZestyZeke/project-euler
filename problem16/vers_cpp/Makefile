@@ -1,17 +1,18 @@
 #TARGET	= p16
 
-CC 		= g++
-CFLAGS  = -g -Wall
-LDFLAGS = -g
-LDLIBS  =
+CC 		= gcc
+CXX		= g++
+
+INCLUDES= -I../../libs 
+CFLAGS  = -g -Wall $(INCLUDES)
+CXXFLAGS= -g -Wall $(INCLUDES)
+
+LDFLAGS = -g -L../../libs
+LDLIBS  = -lbigint
 
 #$(TARGET):
 
-test: test.o bigint.o
-
-test.o: bigint.h
-
-bigint.o: bigint.h
+test:
 
 clean:
-	rm -f a.out *o $(TARGET)
+	rm -f a.out *o test
