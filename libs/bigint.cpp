@@ -148,51 +148,56 @@ BigInt operator-(const BigInt& num, const BigInt& n2)
         }
 
         // need to do subtraction algorithm.
-        auto iter1 = n1.digits.begin();
-        auto iter2 = n2.digits.begin();
+        auto iter1 = n1.digits.rbegin();
+        auto iter2 = n2.digits.rbegin();
 
-        // account for size difference
-        int diff;
-        diff = n1.digits.size() - n2.digits.size();
-        while (diff > 0) {
-                ++iter1;
-                --diff;
-        }
+        cout<<"before for\n";
+        for (; iter1 != n1.digits.rend() && iter2 != n2.digits.rend();
+                                                    ++iter1, ++iter2) {
 
-        for (; iter1 != n1.digits.end() && iter2 != n2.digits.end();
-                                                ++iter1, ++iter2) {
-
-                if (*iter1 > *iter2) {
-
-                        retval.digits.push_back(*iter1 - *iter2);
-
-                } else if (*iter1 < *iter2) {
+                if (*iter1 >= *iter2)
+                        retval.digits.insert(retval.digits.begin(), *iter1 - *iter2);
+                else {
 
                         auto iter_temp = iter1;
-                        --iter_temp;
 
                         while (*iter_temp == 0)
-                                --iter_temp;
+                                ++iter_temp;
 
                         // 'borrow'
                         --*iter_temp;
 
-                        ++iter_temp;
+                        --iter_temp;
                         while (iter_temp != iter1) {
                                 *iter_temp = BASE_SIZE - 1;
-                                ++iter_temp;
+                                --iter_temp;
                         }
 
                         char digit = (BASE_SIZE - *iter2) + *iter1;
-                        retval.digits.push_back(digit);
-
-
-                } else if (retval.digits.size() > 0) { // *iter1 == *iter2
-
-                        retval.digits.push_back(0);
-
+                        retval.digits.insert(retval.digits.begin(), digit);
                 }
         }
+
+        cout << "before while\n";
+        while (iter1 != n1.digits.rend()) {
+                retval.digits.insert(retval.digits.begin(), *iter1);
+                ++iter1;
+        }
+
+        cout << "before second while\n";
+        // clean up leading 0's
+        auto iter_temp = retval.digits.begin();
+        // NEED A CHECK TO SEE IF VECTOR IS EMPTY OR AT END
+        while (iter_temp != retval.digits.end() && *iter_temp == 0) {
+
+                retval.digits.erase(iter_temp);
+                iter_temp = retval.digits.begin();
+        }
+
+        // lazy coding, result of cleaning up leading 0's means that a result
+        // of 0 will just be empty
+        if (retval.digits.empty())
+                retval.digits.push_back(0);
 
         return retval;
 }
