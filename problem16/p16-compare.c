@@ -140,9 +140,14 @@ int main(int argc, char **argv)
 
 	// write results to file.
 	for (int i = 0; i < NUM_THREADS; i++) {
-		printf("%llu\n", time_queue[i].time_spent);
-		sprintf(buffer, "\nThe %s solution takes %llu nanoseconds\n\n",
-			time_queue[i].lang_dir, time_queue[i].time_spent);
+
+		unsigned long long sec, ns;
+		sec = time_queue[i].time_spent / BILLION;
+		ns = time_queue[i].time_spent & BILLION;
+
+		sprintf(buffer,
+			"\nThe %s solution takes %llu seconds and %llu nanoseconds\n\n",
+			time_queue[i].lang_dir, sec, ns);
 		fwrite(buffer, sizeof(char), strlen(buffer), fp);
 	}
 
