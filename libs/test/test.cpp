@@ -41,5 +41,20 @@ int main()
         ++temp7;
         cout << "++temp7 is: " << temp7 << "\n";
 
+        BigInt temp9(2);
+        temp7 = temp7 - temp9;
+        cout << "temp7 - 2 is: " << temp7 << "\n";
+        BigInt temp8 = temp7 - temp5;
+        cout << "temp9 which is temp7 - temp5 is: " << temp8 << "\n";
+
+        BigInt temptemp1(161);
+        BigInt temptemp2(1);
+        BigInt temptemp3(161);
+
+        BigInt temptemp4 = temptemp1 - temptemp2;
+        cout << "161 - 1 is: " << temptemp4 << "\n";
+        BigInt temptemp5 = temptemp1 - temptemp3;
+        cout << "161 - 160 is: " << temptemp5 << "\n";
+
         return 0;
 }

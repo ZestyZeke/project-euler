@@ -151,7 +151,6 @@ BigInt operator-(const BigInt& num, const BigInt& n2)
         auto iter1 = n1.digits.rbegin();
         auto iter2 = n2.digits.rbegin();
 
-        cout<<"before for\n";
         for (; iter1 != n1.digits.rend() && iter2 != n2.digits.rend();
                                                     ++iter1, ++iter2) {
 
@@ -178,16 +177,13 @@ BigInt operator-(const BigInt& num, const BigInt& n2)
                 }
         }
 
-        cout << "before while\n";
         while (iter1 != n1.digits.rend()) {
                 retval.digits.insert(retval.digits.begin(), *iter1);
                 ++iter1;
         }
 
-        cout << "before second while\n";
         // clean up leading 0's
         auto iter_temp = retval.digits.begin();
-        // NEED A CHECK TO SEE IF VECTOR IS EMPTY OR AT END
         while (iter_temp != retval.digits.end() && *iter_temp == 0) {
 
                 retval.digits.erase(iter_temp);
@@ -364,7 +360,8 @@ BigInt& BigInt::operator+=(const BigInt& num)
 
 BigInt& BigInt::operator-=(const BigInt& num)
 {
-        cout << "this function is not implemented yet\n";
+        // too lazy to implement this properly atm, going to use other operators
+        *this = *this - num;
         return *this;
 }
 
@@ -392,6 +389,19 @@ BigInt& BigInt::operator++()
 }
 
 BigInt BigInt::operator++(int)
+{
+        BigInt retval(*this);
+        ++(*this);
+        return retval;
+}
+
+BigInt& BigInt::operator--()
+{
+        *this += 1;
+        return *this;
+}
+
+BigInt BigInt::operator--(int)
 {
         BigInt retval(*this);
         ++(*this);

@@ -97,8 +97,8 @@ class BigInt {
                 // increment, decrement
                 BigInt& operator++();   // ++num
                 BigInt operator++(int); // num++, int is a dummy variable
-                //BigInt& operator--();   // --num
-                //BigInt operator--(int); // num--
+                BigInt& operator--();   // --num
+                BigInt operator--(int); // num--
 
         private:
                 // our structure holding the digits of our BigInt
