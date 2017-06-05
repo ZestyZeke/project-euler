@@ -8,7 +8,7 @@ CFLAGS  = -g -Wall $(INCLUDES)
 CXXFLAGS= -g -Wall $(INCLUDES)
 
 LDFLAGS = -g
-LDLIBS  = -lpthread
+LDLIBS  = -lpthread -lrt
 
 $(TARGET):
 
