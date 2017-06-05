@@ -1,0 +1,5 @@
+#!/bin/bash
+
+# a Simple Bash Script to run my solution
+
+make && java P16 1000 && make clean

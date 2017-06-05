@@ -1,9 +1,14 @@
-TARGET	= p16
+TARGET	= p16-compare
 
 CC 		= gcc
-CFLAGS  = -g -Wall
+CXX     = g++
+
+INCLUDES=
+CFLAGS  = -g -Wall $(INCLUDES)
+CXXFLAGS= -g -Wall $(INCLUDES)
+
 LDFLAGS = -g
-LDLIBS  =
+LDLIBS  = -lpthread
 
 $(TARGET):
 

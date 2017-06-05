@@ -122,5 +122,5 @@ Problem 16
 ---------
 - [ ] C
 - [x] C++
-- [ ] Java
-- [ ] Python
+- [x] Java
+- [x] Python
