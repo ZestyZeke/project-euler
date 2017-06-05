@@ -121,6 +121,6 @@ Problem 15
 Problem 16
 ---------
 - [ ] C
-- [ ] C++
+- [x] C++
 - [ ] Java
 - [ ] Python

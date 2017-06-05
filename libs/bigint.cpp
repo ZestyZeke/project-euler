@@ -407,3 +407,16 @@ BigInt BigInt::operator--(int)
         ++(*this);
         return retval;
 }
+
+unsigned long long BigInt::sum_digits()
+{
+        unsigned long long sum = 0;
+
+        for (auto iter = digits.begin(); iter != digits.end(); ++iter) {
+
+                sum += (*iter / 10) % BASE_SIZE; // hard coding 10 no bueno
+                sum += *iter % (BASE_SIZE / 10); // hard coding 10 no bueno
+        }
+
+        return sum;
+}

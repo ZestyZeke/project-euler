@@ -100,6 +100,9 @@ class BigInt {
                 BigInt& operator--();   // --num
                 BigInt operator--(int); // num--
 
+                // kind of specific and niche won't work for all cases
+                unsigned long long sum_digits();
+
         private:
                 // our structure holding the digits of our BigInt
                 // going to change, so that each char holds 0-99

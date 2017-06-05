@@ -1,4 +1,4 @@
-#TARGET	= p16
+TARGET	= p16
 
 CC 		= gcc
 CXX		= g++
@@ -10,9 +10,7 @@ CXXFLAGS= -g -Wall $(INCLUDES)
 LDFLAGS = -g -L../../libs
 LDLIBS  = -lbigint
 
-#$(TARGET):
-
-test:
+$(TARGET):
 
 clean:
-	rm -f a.out *o test
+	rm -f a.out *.o $(TARGET)
