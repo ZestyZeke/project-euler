@@ -1,3 +1,12 @@
+/*
+ * P2.java
+ *
+ * Zeke Reyna
+ *
+ * This is a simple function that sums
+ * fibonacci numbers under a certain bound.
+ */
+
 import static java.lang.System.out;
 
 public class P2

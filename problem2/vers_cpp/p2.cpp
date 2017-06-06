@@ -8,10 +8,9 @@
  */
 
 #include <iostream>
+#define BOUND 10
 
 using namespace std;
-
-#define BOUND 10
 
 int main( int argc, char **argv )
 {
@@ -35,6 +34,6 @@ int main( int argc, char **argv )
 	}
 
 	cout << "\nThe sum of even valued fibonacci terms under " << bound;
-	cout << " is " << sum << endl << endl;
+	cout << " is " << sum << "\n\n";
 	return 0;
 }

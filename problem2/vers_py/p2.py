@@ -6,7 +6,7 @@
 import sys
 
 def main( argv ):
-    
+
     if len(argv) == 2:
         bound = int( argv[1] )
     else:

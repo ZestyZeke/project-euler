@@ -1,5 +1,5 @@
 /*
- * fib.c
+ * p2.c
  *
  * Zeke Reyna
  *

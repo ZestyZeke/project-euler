@@ -1,11 +1,17 @@
-TARGET=p2
+TARGET	= p2
 
 CC 		= gcc
-CFLAGS  = -g -Wall
+CXX 	= g++
+
+INCLUDES=
+CFLAGS  = -g -Wall $(INCLUDES)
+CXXFLAGS= -g -Wall $(INCLUDES)
+
 LDFLAGS = -g
 LDLIBS  = 
 
 $(TARGET):
 
+.PHONY: clean
 clean:
-	rm -f a.out *o $(TARGET)
+	rm -f a.out *.o $(TARGET)
