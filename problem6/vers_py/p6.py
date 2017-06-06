@@ -7,23 +7,23 @@
 
 import sys
 
-def sqr( n ):
+def sqr(n):
     return n * n
 
-def triangle( n ):
+def triangle(n):
     return (sqr(n) + n) / 2
 
-def sum_of_squares( n ):
+def sum_of_squares(n):
     return n * (n + 1) * (2 * n + 1) / 6;
 
-def main( argv ):
+def main(argv):
 
     if len(argv) == 2:
-        bound = int( argv[1] )
+        bound = int(argv[1])
     else:
         bound = 10
 
-    answer = sum_of_squares( bound ) - sqr( triangle( bound ) )
+    answer = sum_of_squares(bound) - sqr(triangle(bound))
     if answer < 0:
         answer = -1 * answer
 
@@ -31,4 +31,4 @@ def main( argv ):
            " square of the sum of the first ", bound, " natural num",
            "bers is ", int(answer), "\n" );
 
-main( sys.argv )
+main(sys.argv)

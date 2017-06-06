@@ -10,25 +10,21 @@
 #include <iostream>
 
 #define BOUND 10
+#define SQR(x) ((x)*(x))
 
 using namespace std;
 
-int sqr( int n )
-{
-        return n * n;
-}
-
 int triangle( int n )
 {
-        return ( sqr(n) + n ) / 2;
+        return (SQR(n) + n) / 2;
 }
 
-int sum_of_squares( int n )
+int sum_of_squares(int n)
 {
         return n * (n + 1) * (2 * n + 1) / 6;
 }
 
-int main( int argc, char **argv )
+int main(int argc, char **argv)
 {
         /*
          * sum of first n natural numbers is the triangular number
@@ -38,15 +34,15 @@ int main( int argc, char **argv )
          */
 
         int bound, answer;
-        (argc == 2) ? (bound = stoi( argv[1] )) : (bound = BOUND);
+        (argc == 2) ? (bound = stoi(argv[1])) : (bound = BOUND);
 
-        answer = sum_of_squares( bound ) - sqr( triangle( bound ) );
+        answer = sum_of_squares(bound) - SQR(triangle(bound));
 
-        if( answer < 0 )
+        if (answer < 0)
                 answer = -1 * answer;
 
         cout << "\nThe difference between the Sum of the Squares and the";
         cout << " square of the sum of the first " << bound << " natural";
-        cout << " numbers is " << answer << endl << endl;
+        cout << " numbers is " << answer << "\n\n";
         return 0;
 }

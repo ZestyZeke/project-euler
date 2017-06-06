@@ -11,23 +11,19 @@
 #include <stdlib.h>
 
 #define BOUND 10
+#define SQR(x) ((x)*(x))
 
-int sqr( int x )
+int triangle(int n)
 {
-	return x*x;
+	return (SQR(n) + n) / 2;
 }
 
-int triangle( int n )
-{
-	return ( sqr( n ) + n ) / 2;
-}
-
-int sum_of_squares( int n )
+int sum_of_squares(int n)
 {
 	return n * (n + 1) * (2 * n + 1) / 6;
 }
 
-int main( int argc, char **argv )
+int main(int argc, char **argv)
 {
 	/*
 	 * sum of first n natural numbers is the triangular number
@@ -41,9 +37,9 @@ int main( int argc, char **argv )
 	int answer;
 	(argc == 2) ? (bound = atoi(argv[1])) : (bound = BOUND);
 
-	answer = sum_of_squares( bound ) - sqr( triangle( bound ) );
+	answer = sum_of_squares(bound) - SQR(triangle(bound));
 
-	if( answer < 0 )
+	if (answer < 0)
 		answer = -1 * answer;
 
 	printf( "\nThe Difference between the Sum of the Squares and the" );
