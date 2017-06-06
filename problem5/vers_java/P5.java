@@ -1,27 +1,36 @@
+/*
+ * P5.java
+ *
+ * Zeke Reyna
+ *
+ * Finds the smallest number that is evenly divisible by
+ * the natural numbers from 1 to bound.
+ */
+
 public class P5
 {
-        public static void print( Object line )
+        public static void print(Object line)
         {
-                System.out.print( line );
+                System.out.print(line);
         }
 
-        public static void main( String args[] )
+        public static void main(String args[])
         {
                 int i, num, bound;
                 boolean isDivis;
 
-                if( args.length == 1 )
-                        bound = Integer.parseInt( args[0] );
+                if (args.length == 1)
+                        bound = Integer.parseInt(args[0]);
                 else
                         bound = 10;
 
                 num = 3;
                 isDivis = false;
-                while( !isDivis ) {
+                while (!isDivis) {
                         isDivis = true;
                         num++;
-                        for( i = 1; i <= bound; i++ ) {
-                                if( num % i != 0 ) {
+                        for (i = 1; i <= bound; i++) {
+                                if (num % i != 0) {
                                         isDivis = false;
                                         break;
                                 }

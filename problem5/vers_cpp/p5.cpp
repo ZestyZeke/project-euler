@@ -7,12 +7,10 @@
  */
 
 #include <iostream>
-
+#define BOUND 10
 using namespace std;
 
-#define BOUND 10
-
-int main( int argc, char **argv )
+int main(int argc, char **argv)
 {
 	int i, num, bound;
 	int isDivis;
@@ -21,10 +19,10 @@ int main( int argc, char **argv )
 
 	num = 3;
 	isDivis = 0;
-	while( !isDivis && num++ ) {
+	while (!isDivis && num++) {
 		isDivis = 1;
-		for( i = 1; i <= bound; i++ ) {
-			if( num % i != 0 ) {
+		for (i = 1; i <= bound; i++) {
+			if (num % i != 0) {
 				isDivis = 0;
 				break;
 			}
@@ -33,6 +31,6 @@ int main( int argc, char **argv )
 
 	cout << "\nThe smallest number that is evenly divisible by all of ";
 	cout << "the numbers from 1 to " << bound;
-	cout << " is " << num << endl << endl;
+	cout << " is " << num << "\n\n";
 	return 0;
 }
