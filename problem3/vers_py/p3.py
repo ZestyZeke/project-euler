@@ -6,19 +6,19 @@
 import sys
 import math
 
-def main( argv ):
+def main(argv):
 
     if len(argv) == 2:
-        num = int( argv[1] )
+        num = int(argv[1])
     else:
         num = 99
 
     prime_factors = []
-    prime_factors.append( 2 )
+    prime_factors.append(2)
 
-    for i in range(2, int(math.sqrt( num ) )):
+    for i in range(2, int(math.sqrt(num))):
 
-        if( num % i != 0):
+        if num % i != 0:
             continue
 
         isPrime = 1
@@ -27,12 +27,12 @@ def main( argv ):
                 isPrime = 0
 
         if isPrime:
-            prime_factors.append( i )
+            prime_factors.append(i)
 
-    largest_prime = prime_factors[ -1 ]
+    largest_prime = prime_factors[-1]
 
-    print( "\nThe largest prime factor of ",
-          num, " is ", largest_prime, "\n" )
+    print("\nThe largest prime factor of ",
+          num, " is ", largest_prime, "\n")
 
 
-main( sys.argv )
+main(sys.argv)

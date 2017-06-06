@@ -13,7 +13,7 @@
 
 #define NUM 600851475143
 
-int main( int argc, char **argv )
+int main()
 {
 	int largest_prime;
 	unsigned long long num = NUM;
