@@ -22,12 +22,9 @@
 
 #include <iostream>
 #include <vector>
-#include <algorithm>
 
 #define     BASE_SIZE       100
 #define     DIGIT_SIZE      10
-
-using namespace std;
 
 class BigInt {
 
@@ -61,10 +58,10 @@ class BigInt {
                  */
 
                 // put to operator
-                friend ostream& operator<<(ostream& os, const BigInt& num);
+                friend std::ostream& operator<<(std::ostream& os, const BigInt& num);
 
                 // get from operator
-                friend istream& operator>>(istream& is, BigInt& num);
+                friend std::istream& operator>>(std::istream& is, BigInt& num);
 
                 // relational operators
                 friend int operator<(const BigInt& n1, const BigInt& n2);
@@ -106,7 +103,7 @@ class BigInt {
         private:
                 // our structure holding the digits of our BigInt
                 // going to change, so that each char holds 0-99
-                vector<char> digits;
+                std::vector<char> digits;
 };
 
 // if the friend thing is not in place, can have + and other stuff here.

@@ -17,8 +17,6 @@
 
 #include "bigint.h"
 
-using namespace std;
-
 BigInt::BigInt()
 {
         // make sure it is empty... might be unecessary
@@ -141,8 +139,8 @@ BigInt operator-(const BigInt& num, const BigInt& n2)
         BigInt n1(num); // bc sub algo requires modifying the dividend
 
         if (n1 < n2) {
-                cout << "please, subtract doesn't return negative numbers\n";
-                cout << "n1 is "<< n1 << " n2 is "<< n2 << "\n";
+                std::cout << "please, subtract doesn't return negative numbers\n";
+                std::cout << "n1 is "<< n1 << " n2 is "<< n2 << "\n";
                 BigInt temp(0);
                 return temp;
         }
@@ -212,12 +210,12 @@ BigInt operator*(const BigInt& n1, const BigInt& n2)
 
 BigInt operator/(const BigInt& n1, const BigInt& n2)
 {
-        cout<<"this function doesn't work yet\n";
+        std::cout<<"this function doesn't work yet\n";
         BigInt temp;
         return temp;
 }
 
-ostream& operator<<(ostream& os, const BigInt& num)
+std::ostream& operator<<(std::ostream& os, const BigInt& num)
 {
         //string output;
         for (auto iter = num.digits.begin(); iter != num.digits.end(); ++iter) {
@@ -241,9 +239,9 @@ ostream& operator<<(ostream& os, const BigInt& num)
         return os;
 }
 
-istream& operator>>(istream& is, const BigInt& num)
+std::istream& operator>>(std::istream& is, const BigInt& num)
 {
-        cout<<"operator>> is not implemented yet\n";
+        std::cout<<"operator>> is not implemented yet\n";
         return is;
 }
 
