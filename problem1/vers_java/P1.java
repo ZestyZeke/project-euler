@@ -1,3 +1,11 @@
+/*
+ * P1.java
+ *
+ * Zeke Reyna
+ *
+ * Finds the sum of all multiples of 3 and 5 below 1000
+ */
+
 public class P1
 {
         public static void main( String[] args )

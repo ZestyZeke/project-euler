@@ -27,7 +27,7 @@ int main( int argc, char **argv )
 	}
 
 	cout << "\nThe sum of all multipes of 3 and 5 below " << bound;
-	cout << " is "<< sum << "\n" << endl;
+	cout << " is "<< sum << "\n\n";
 
 	return 0;
 }
