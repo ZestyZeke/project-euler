@@ -376,7 +376,7 @@ BigInt& BigInt::operator*=(const BigInt& num)
 
 BigInt& BigInt::operator/=(const BigInt& num)
 {
-        cout << "this function is not implemented yet\n";
+        std::cout << "this function is not implemented yet\n";
         return *this;
 }
 
