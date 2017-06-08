@@ -1,11 +1,17 @@
-CC = gcc
+TARGET 	= p7
 
-CFLAGS = -g -Wall
+CC 		= gcc
+CXX 	= g++
+
+INCLUDES=
+CFLAGS  = -g -Wall $(INCLUDES)
+CXXFLAGS= -g -Wall $(INCLUDES)
+
 LDFLAGS = -g
+LDLIBS  = -lm
 
-LDLIBS = -lm
+$(TARGET):
 
-p7:
-
+.PHONY: clean
 clean:
-	rm -f a.out p7 p7.o
+	rm -f a.out $(TARGET) *.o
