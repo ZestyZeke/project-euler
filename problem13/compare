@@ -25,3 +25,7 @@ cd vers_cpp && (time ./runplz) 2>> ../compare.txt && cd ..
 #For this one only, the optimized C solution.
 printf "\nThis is the optimized C solutions time:\n" >> compare.txt
 cd vers_alt && (time ./runplz) 2>> ../compare.txt && cd ..
+
+# For the BigInt Cpp Class I made 
+printf "\nThis is the BigInt C++ solutions time:\n" >> compare.txt
+cd vers_cpp_bigint && (time ./runplz) 2>> ../compare.txt && cd ..

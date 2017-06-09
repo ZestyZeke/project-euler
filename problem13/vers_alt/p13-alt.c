@@ -83,7 +83,7 @@ int main(int argc, char **argv)
 
 	process(nums);
 
-	memset(sum, -1, EST_SIZE);
+	memset(sum, -1, EST_SIZE * sizeof(int));
 	sum_nums(nums, sum);
 
 	printf("\nThe sum of all those numbers is:\n");
