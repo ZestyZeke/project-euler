@@ -51,6 +51,49 @@ BigInt::BigInt(unsigned long long num)
         //reverse(digits.begin(), digits.end());
 }
 
+BigInt::BigInt(std::string num)
+{
+        if (!digits.empty())
+                digits.clear();
+
+        /*
+        char digit;
+        for (auto iter = num.begin(); iter != num.end(); ++iter) {
+
+                digit = *iter - '0';
+                if (digit > 9 || digit < 0) {
+                        std::cout << "are you sure this is a number?\n";
+                        continue;
+                }
+
+                digits.push_back(digit);// check if it works
+        } */
+        // try iterating backwards and reading in two digits at a time.
+        // could also convert string to unsigned long long and then call
+        // that constructor somehow
+
+        char tens_digit;
+        char ones_digit;
+        char my_digit;
+        for (auto iter = num.rbegin(); iter != num.rend(); ++iter) {
+
+                ones_digit = *iter - '0';
+
+                if (++iter != num.rend()) {
+                        tens_digit = *iter - '0';
+
+                } else {
+                        tens_digit = 0;
+                        --iter;
+                }
+
+                // later put in checks to see if 0 < tens_digit < 10, etc
+                my_digit = tens_digit * 10 + ones_digit;
+
+                digits.insert(digits.begin(), my_digit);
+        }
+}
+
 BigInt::~BigInt()
 {
         // vector destructor should be implicitly called

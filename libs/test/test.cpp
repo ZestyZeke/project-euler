@@ -56,5 +56,10 @@ int main()
         BigInt temptemp5 = temptemp1 - temptemp3;
         cout << "161 - 160 is: " << temptemp5 << "\n";
 
+        string num = "123123123123123123123";
+        BigInt str_num(num);
+        cout << "String num is " << num << " and BigInt strnum(num) is: ";
+        cout << str_num << "\n";
+
         return 0;
 }

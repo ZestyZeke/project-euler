@@ -36,6 +36,9 @@ class BigInt {
                 // constructor
                 BigInt(const unsigned long long num);
 
+                // constructor
+                BigInt(std::string num);
+
                 // destructor
                 ~BigInt();
 
