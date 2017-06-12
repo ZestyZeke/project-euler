@@ -21,7 +21,7 @@
 #define __BIGINT_H__
 
 #include <iostream>
-#include <vector>
+#include <deque>
 
 #define     BASE_SIZE       100
 #define     DIGIT_SIZE      10
@@ -106,7 +106,7 @@ class BigInt {
         private:
                 // our structure holding the digits of our BigInt
                 // going to change, so that each char holds 0-99
-                std::vector<char> digits;
+                std::deque<char> digits;
 };
 
 // if the friend thing is not in place, can have + and other stuff here.

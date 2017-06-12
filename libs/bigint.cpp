@@ -19,15 +19,11 @@
 
 BigInt::BigInt()
 {
-        // make sure it is empty... might be unecessary
-        //while (!digits.empty())
-        //       digits.pop_back();
         if (!digits.empty())
                 digits.clear();
 
         // it might be best to do nothing, that way we get undefined behavior
         // because it really shouldn't be instantiated this way.
-        //digits.push_back(0);
 }
 
 
@@ -45,10 +41,9 @@ BigInt::BigInt(unsigned long long num)
                 remainder = num % BASE_SIZE;
                 num /= BASE_SIZE;
 
-                digits.insert(digits.begin(), remainder);
-                //digits.push_back(remainder);
+                digits.push_front(remainder);
+                //digits.insert(digits.begin(), remainder);
         }
-        //reverse(digits.begin(), digits.end());
 }
 
 BigInt::BigInt(std::string num)
@@ -56,25 +51,11 @@ BigInt::BigInt(std::string num)
         if (!digits.empty())
                 digits.clear();
 
-        /*
-        char digit;
-        for (auto iter = num.begin(); iter != num.end(); ++iter) {
-
-                digit = *iter - '0';
-                if (digit > 9 || digit < 0) {
-                        std::cout << "are you sure this is a number?\n";
-                        continue;
-                }
-
-                digits.push_back(digit);// check if it works
-        } */
         // try iterating backwards and reading in two digits at a time.
         // could also convert string to unsigned long long and then call
         // that constructor somehow
 
-        char tens_digit;
-        char ones_digit;
-        char my_digit;
+        char tens_digit, ones_digit, my_digit;
         for (auto iter = num.rbegin(); iter != num.rend(); ++iter) {
 
                 ones_digit = *iter - '0';
@@ -90,7 +71,8 @@ BigInt::BigInt(std::string num)
                 // later put in checks to see if 0 < tens_digit < 10, etc
                 my_digit = tens_digit * 10 + ones_digit;
 
-                digits.insert(digits.begin(), my_digit);
+                digits.push_front(my_digit);
+                //digits.insert(digits.begin(), my_digit);
         }
 }
 
@@ -139,7 +121,8 @@ BigInt operator+(const BigInt& n1, const BigInt& n2)
                 digit  = carry % BASE_SIZE;
                 carry /= BASE_SIZE;
 
-                temp.digits.insert(temp.digits.begin(), digit);
+                temp.digits.push_front(digit);
+                //temp.digits.insert(temp.digits.begin(), digit);
         }
 
         // now, carry can still have some, and there is the possibility one of
@@ -150,7 +133,8 @@ BigInt operator+(const BigInt& n1, const BigInt& n2)
                 carry += (unsigned long long) *iter1;
                 digit = carry % BASE_SIZE;
                 carry /= BASE_SIZE;
-                temp.digits.insert(temp.digits.begin(), digit);
+                temp.digits.push_front(digit);
+                //temp.digits.insert(temp.digits.begin(), digit);
 
                 ++iter1;
         }
@@ -160,7 +144,8 @@ BigInt operator+(const BigInt& n1, const BigInt& n2)
                 carry += (unsigned long long) *iter2;
                 digit = carry % BASE_SIZE;
                 carry /= BASE_SIZE;
-                temp.digits.insert(temp.digits.begin(), digit);
+                temp.digits.push_front(digit);
+                //temp.digits.insert(temp.digits.begin(), digit);
 
                 ++iter2;
         }
@@ -168,7 +153,8 @@ BigInt operator+(const BigInt& n1, const BigInt& n2)
         while (carry > 0) {
 
                 digit = carry % BASE_SIZE;
-                temp.digits.insert(temp.digits.begin(), digit);
+                temp.digits.push_front(digit);
+                //temp.digits.insert(temp.digits.begin(), digit);
 
                 carry /= BASE_SIZE;
         }
@@ -196,7 +182,8 @@ BigInt operator-(const BigInt& num, const BigInt& n2)
                                                     ++iter1, ++iter2) {
 
                 if (*iter1 >= *iter2)
-                        retval.digits.insert(retval.digits.begin(), *iter1 - *iter2);
+                        retval.digits.push_front(*iter1 - *iter2);
+                        //retval.digits.insert(retval.digits.begin(), *iter1 - *iter2);
                 else {
 
                         auto iter_temp = iter1;
@@ -214,12 +201,14 @@ BigInt operator-(const BigInt& num, const BigInt& n2)
                         }
 
                         char digit = (BASE_SIZE - *iter2) + *iter1;
-                        retval.digits.insert(retval.digits.begin(), digit);
+                        retval.digits.push_front(digit);
+                        //retval.digits.insert(retval.digits.begin(), digit);
                 }
         }
 
         while (iter1 != n1.digits.rend()) {
-                retval.digits.insert(retval.digits.begin(), *iter1);
+                retval.digits.push_front(*iter1);
+                //retval.digits.insert(retval.digits.begin(), *iter1);
                 ++iter1;
         }
 
@@ -384,7 +373,8 @@ BigInt& BigInt::operator+=(const BigInt& num)
                 carry += (unsigned long long) *iter_num;
                 digit  = carry % BASE_SIZE;
                 carry /= BASE_SIZE;
-                digits.insert(digits.begin(), digit);
+                digits.push_front(digit);
+                //digits.insert(digits.begin(), digit);
 
                 ++iter_num;
         }
@@ -392,7 +382,8 @@ BigInt& BigInt::operator+=(const BigInt& num)
         while (carry > 0) {
 
                 digit = carry % BASE_SIZE;
-                digits.insert(digits.begin(), digit);
+                digits.push_front(digit);
+                //digits.insert(digits.begin(), digit);
 
                 carry /= BASE_SIZE;
         }
