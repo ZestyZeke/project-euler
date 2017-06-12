@@ -2,7 +2,10 @@
 
 # a Simple Bash Script to run my solution
 
-# first need to make sure that library is made
-cd ../../libs && make && cd ../problem16/vers_cpp
+# Need to check if libary is made
+if [ ! -e ../../libs/libbigint.a ]
+then
+        cd ../../libs && make && cd ../problem16/vers_cpp
+fi
 
 make && ./p16 1000 && make clean
