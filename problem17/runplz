@@ -2,5 +2,5 @@
 
 # a Simple Bash Script to run my solution
 
-# make && ./p17 1 1000 && make clean
-make && ./p17 && make clean
+make && ./p17 1 1000 && make clean
+# make && ./p17 && make clean

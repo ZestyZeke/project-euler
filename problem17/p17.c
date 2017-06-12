@@ -40,25 +40,90 @@ void process(FILE *fp, char contents[LINES][LETTERS_PER])
 	}
 }
 
+unsigned long long count(int pos, char file_contents[LINES][LETTERS_PER])
+{
+	unsigned long long retval = 0;
+	retval += (unsigned long long) strlen(file_contents[pos]);
+	//printf("%s ", file_contents[pos]);
+	return retval;
+}
+
 unsigned long long find_letters_in_num(int num,
-	char file_contents[LINES][LETTERS_PER])
+char file_contents[LINES][LETTERS_PER])
 {
 	unsigned long long sum = 0;
 
 	if (0 <= num && num <= 20) {
-		sum += (unsigned long long) strlen(file_contents[num]);
+
+		sum += count(num, file_contents);
+
 	} else if (21 <= num && num <= 99) {
 
 		// tens place
 		int tens_place = num / 10;
 		int ones_place = num % 10;
 
-		sum += (unsigned long long) strlen(file_contents[18 + tens_place]);
+		sum += count(18 + tens_place, file_contents);
 		// 18 seems arbitrary but spot 20 is where the tens place start
 		// in the file
-		sum += (unsigned long long) strlen(file_contents[ones_place]);
+		if (ones_place != 0)
+			sum += count(ones_place, file_contents);
+
+	} else if (num == 100) {
+
+		// one
+		sum += count(1, file_contents);
+		// hundred
+		sum += count(28, file_contents);
+
+	} else if (100 < num && num < 1000) {
+
+		int hundreds_place = num / 100;
+		int tens_place = num / 10 % 10;
+		int ones_place = num % 10;
+
+		// hundreds
+		sum += count(hundreds_place, file_contents);
+
+		// hundred
+		sum += count(28, file_contents);
+
+		// and
+		sum += count(30, file_contents);
+
+		// tens and ones place
+		int tens_and_ones = num % 100;
+
+		if (tens_and_ones == 0) {
+
+			// need to get rid of 'and' letters then exit
+			sum -= count(30, file_contents);
+
+		} else if (0 < tens_and_ones && tens_and_ones <= 20) {
+
+			sum += count(tens_and_ones, file_contents);
+
+		} else if (21 <= tens_and_ones && tens_and_ones <= 99) {
+
+			sum += count(18 + tens_place, file_contents);
+			if (ones_place != 0)
+				sum += count(ones_place, file_contents);
+
+		}
+
+	} else if (num == 1000) {
+
+		// one
+		sum += count(1, file_contents);
+		// thousand
+		sum += count(29, file_contents);
+
+	} else {
+		printf("upper bound is too large, currently not supported\n");
 	}
 
+	// delete when works
+	//printf("\n");
 	return sum;
 }
 
