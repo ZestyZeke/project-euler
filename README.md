@@ -124,3 +124,10 @@ Problem 16
 - [x] C++
 - [x] Java
 - [x] Python
+
+Problem 17
+---------
+- [x] C
+- [x] C++
+- [ ] Java
+- [ ] Python
