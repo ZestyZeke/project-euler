@@ -129,5 +129,12 @@ Problem 17
 ---------
 - [x] C
 - [x] C++
+- [x] Java
+- [x] Python
+
+Problem 18
+---------
+- [ ] C
+- [ ] C++
 - [ ] Java
 - [ ] Python

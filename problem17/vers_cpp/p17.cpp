@@ -63,13 +63,14 @@ ull find_num_letters(const int num, const string file_contents[LINES][WORDS_PER]
 {
         ull num_letters = 0;
 
-        const int hundreds_place = num / 100;
+        const int thousands_place= num / 1000;
+        const int hundreds_place = num / 100 % 10;
         const int tens_place     = num / 10 % 10;
         const int ones_place     = num % 10;
 
         // thousands
-        if (9 < hundreds_place) {
-                num_letters += count(0, hundreds_place / 10, file_contents);
+        if (0 < thousands_place) {
+                num_letters += count(0, thousands_place, file_contents);
 
                 // thousand
                 num_letters += count(3, 1, file_contents);
