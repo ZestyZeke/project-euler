@@ -3,4 +3,5 @@
 # a Simple Bash Script to run my solution
 
 #python p17.py
-python p17.py 1 1000
+#python p17.py 1 1000
+python3 p17.py 1 1000

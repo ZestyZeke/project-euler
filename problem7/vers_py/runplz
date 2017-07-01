@@ -2,4 +2,5 @@
 
 # a Simple Bash Script to run my solution
 
-python p7.py 10001
+#python p7.py 10001
+python3 p7.py 10001

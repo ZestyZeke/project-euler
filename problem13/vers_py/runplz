@@ -2,4 +2,5 @@
 
 # a Simple Bash Script to run my solution
 
-python p13.py
+#python p13.py
+python3 p13.py

@@ -7,6 +7,7 @@
  */
 
 #include <iostream>
+#include <cstdlib>
 
 #define BOUND 10
 

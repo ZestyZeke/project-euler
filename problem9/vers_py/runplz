@@ -2,4 +2,5 @@
 
 # a Simple Bash Script to run my solution
 
-python p9.py 1000
+#python p9.py 1000
+python3 p9.py 1000

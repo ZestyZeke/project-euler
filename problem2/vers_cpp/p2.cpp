@@ -8,6 +8,7 @@
  */
 
 #include <iostream>
+#include <cstdlib>
 #define BOUND 10
 
 using namespace std;

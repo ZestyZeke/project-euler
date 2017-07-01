@@ -3,6 +3,7 @@
 # Zeke Reyna
 #
 # Sums fibonacci numbers under a certain bound
+#!/usr/bin/env python3
 import sys
 
 def main( argv ):

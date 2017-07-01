@@ -2,4 +2,5 @@
 
 # a Simple Bash Script to run my solution
 
-python p3.py 600851475143
+#python p3.py 600851475143
+python3 p3.py 600851475143

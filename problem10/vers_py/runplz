@@ -2,4 +2,5 @@
 
 # a Simple Bash Script to run my solution
 
-python p10.py 2000000
+#python p10.py 2000000
+python3 p10.py 2000000
