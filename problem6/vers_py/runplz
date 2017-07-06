@@ -1,6 +1,0 @@
-#!/bin/bash
-
-# a Simple Bash Script to run my solution
-
-#python p6.py 100
-python3 p6.py 100

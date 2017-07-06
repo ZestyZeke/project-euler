@@ -1,6 +1,0 @@
-#!/bin/bash
-
-# a Simple Bash Script to run my solution
-
-#python p12.py 500
-python3 p12.py 500

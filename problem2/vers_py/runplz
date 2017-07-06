@@ -1,6 +1,0 @@
-#!/bin/bash
-
-# a Simple Bash Script to run my solution
-
-#python p2.py 4000000
-python3 p2.py 4000000
