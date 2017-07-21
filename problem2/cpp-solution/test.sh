@@ -4,9 +4,9 @@ make
 
 if [ $# -eq 1 ]
 then
-        ./p1 "$1"
+        ./p2 "$1"
 else
-        ./p1
+        ./p2
 fi
 
 

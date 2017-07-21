@@ -4,9 +4,9 @@ make
 
 if [ $# -eq 1 ]
 then
-        java P1 "$1"
+        java P2 "$1"
 else
-        java P1
+        java P2
 fi
 
 
