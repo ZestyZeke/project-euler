@@ -1,17 +1,27 @@
 # Project Euler
 
-## Contributors: Zeke Reyna, Moses Franco
-
+Background
+==========
 This is just a fun little project from this [page.](https://projecteuler.net)
 
-To run any of the solutions, go into each folder and run:
-$ ./runplz
+Each Solution to each problem is written in 4 languages:
+- C
+- C++
+- Java
+- Python
 
-I have a bash script called runplz that compiles, executes and cleans
-each folders' source files.
+The Solutions are stored in directories named after each problem, and then after each language.
+To run the individual language solutions, move into its directory, and run **test.sh**
+$ ./test.sh
 
-Also, a recent addition: in Problem 3 directory there is a bash script
-'compare' that runs the different language solutions and records time.
+If you'd prefer to compare the time it takes each solution to solve, in each problem directory there
+is a bash script called **compare-times.sh**, so just run it.
+$ ./compare-times.sh
+It'll write a text file called **compare-times.txt** that will hold the time for each language.
+
+
+Problem Status
+==============
 
 Problem 1
 ---------
