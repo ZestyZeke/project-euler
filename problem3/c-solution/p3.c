@@ -5,6 +5,9 @@
  *
  * Problem 3:
  * What is the largest prime factor of the number 600851475143 ?
+ *
+ * note: Solves for all numbers that are within the bounds of
+ * 'unsigned long long'
  */
 
 #include <stdio.h>

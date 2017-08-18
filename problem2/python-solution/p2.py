@@ -5,6 +5,8 @@
 # Problem 2:
 # By considering the terms in the Fibonacci sequennce whose values do not
 # exceed four million, find the sum of the even-valued terms.
+#
+# note: solves for positive bounds other than four million
 
 import sys
 

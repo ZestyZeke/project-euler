@@ -4,6 +4,8 @@
  * Problem 4:
  * Find the largest palindrome made from the product of
  * two 3-digit numbers.
+ *
+ * note: solves for any n-digit number, where n resides in the bounds of 'int'
  */
 
 #include <stdio.h>

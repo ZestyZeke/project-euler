@@ -6,6 +6,9 @@
  * Problem 2:
  * By considering the terms in the Fibonacci sequence whose values do not
  * exceed four million, find the sum of the even-valued terms.
+ *
+ * note: solves for positive bounds other than four million that do not exceed
+ * the bounds of 'int'
  */
 
 #include <iostream>

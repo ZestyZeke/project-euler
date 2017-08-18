@@ -4,6 +4,8 @@
 #
 # Problem 3:
 # What is the largest prime factor of the number 600851475143 ?
+#
+# note: solves for all positive numbers other than the one given
 import sys
 import math
 

@@ -4,6 +4,8 @@
  * Zeke Reyna
  *
  * Problem 1: Find the sum of the multiples of 3 or 5 below 1000.
+ *
+ * note: solves for any positive number as well as '1000'
  */
 
 #include <iostream>
