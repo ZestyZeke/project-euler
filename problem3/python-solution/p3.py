@@ -51,4 +51,5 @@ def main(args):
     print("\nThe largest prime factor of the number", num,
           "is:", largest, "\n")
 
-main(sys.argv)
+if __name__ == "__main__":
+    main(sys.argv)

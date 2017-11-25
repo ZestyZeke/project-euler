@@ -46,5 +46,5 @@ def main(args):
     print("\nThe smallest positive number that is divisible by all of the",
           "numbers from 1 to {} is: {}\n".format(bound, num))
 
-
-main(sys.argv)
+if __name__ == "__main__":
+    main(sys.argv)

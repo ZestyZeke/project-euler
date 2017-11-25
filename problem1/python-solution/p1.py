@@ -1,13 +1,12 @@
-### p1.py
-#
-# Zeke Reyna
-#
-# Problem 1: Find the sum of the multiples of 3 or 5 below 1000.
-# note: solves for any positive number as well as '1000'
+"""
+@file:   p1.py
+@author: Ezekiel Reyna
+
+Problem 1: Find the sum of the multiples of 3 or 5 below 1000.
+"""
 import sys
 
 def main(argv):
-
     bound = 1000 # default
     sum = 0
     if len(argv) == 2:
@@ -18,4 +17,5 @@ def main(argv):
     print("\nThe sum of the multiples of 3 or 5 below",
           bound, "are:", sum, "\n")
 
-main(sys.argv)
+if __name__ == "__main__":
+    main(sys.argv)

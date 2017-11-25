@@ -45,4 +45,5 @@ def main(args):
     print("\nThe largest palindrome that is made from the product of",
           "two {}-digit numbers is: {}\n".format(num_digits, largest))
 
-main(sys.argv)
+if __name__ == "__main__":
+    main(sys.argv)

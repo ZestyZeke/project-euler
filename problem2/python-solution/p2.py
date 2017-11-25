@@ -31,4 +31,5 @@ def main(args):
     print("\nThe sum of the even-valued Fibonacci numbers under",
           "the bound", bound, "is:", sums, "\n")
 
-main(sys.argv)
+if __name__ == "__main__":
+    main(sys.argv)
