@@ -43,7 +43,7 @@ def main(argv):
     if len(argv) == 2:
         n = int(argv[1])
     else:
-        n = 10 # default
+        n = 100 # default
 
     answer = difference(n)
 

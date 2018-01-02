@@ -8,7 +8,8 @@
  */
 
 #include <iostream>
-#define         DEFAULT     10
+#define 	TEST	    10
+#define         DEFAULT     100
 #define         SQR(x)      ((x)*(x))
 using namespace std;
 

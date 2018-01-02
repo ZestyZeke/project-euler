@@ -55,7 +55,7 @@ public class P6
                 if (args.length == 1)
                         n = Integer.parseInt(args[0]);
                 else
-                        n = 10;
+                        n = 100;
 
                 answer = difference(n);
 
