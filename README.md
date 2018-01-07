@@ -23,6 +23,8 @@ $ ./compare-times.sh
 ```
 It'll write a text file called **compare-times.txt** that will hold the time for each language.
 
+Currently the `libs` directory only holds a BigInt class for certain C++ files.
+
 
 Problem Status
 ==============
