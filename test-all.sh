@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# bash script to test all scripts
+# bash script to test all script solutions
 
 for i in `seq 1 16`;
 do

@@ -12,11 +12,15 @@ Each Solution to each problem is written in 4 languages:
 
 The Solutions are stored in directories named after each problem, and then after each language.
 To run the individual language solutions, move into its directory, and run **test.sh**
+```
 $ ./test.sh
+```
 
 If you'd prefer to compare the time it takes each solution to solve, in each problem directory there
 is a bash script called **compare-times.sh**, so just run it.
+```	
 $ ./compare-times.sh
+```
 It'll write a text file called **compare-times.txt** that will hold the time for each language.
 
 
@@ -99,6 +103,9 @@ Problem 11
 - [x] C++
 - [x] Java
 - [x] Python
+
+Below is not updated to current branch
+--------------------------------------
 
 Problem 12
 ---------

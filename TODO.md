@@ -1,5 +1,7 @@
 # TO DO
 
+Try using Ocaml for some of the solutions.
+
 Solve Problems 1 - 10 with Python.
 
 Introduce C/C++/Java solutions to Problems 3 - 10
