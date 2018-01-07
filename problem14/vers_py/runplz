@@ -1,6 +1,0 @@
-#!/bin/bash
-
-# a Simple Bash Script to run my solution
-
-#python p14.py 1000000
-python3 p14.py 1000000

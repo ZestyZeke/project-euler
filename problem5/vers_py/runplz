@@ -1,6 +1,0 @@
-#!/bin/bash
-
-# a Simple Bash Script to run my solution
-
-#python p5.py 20
-python3 p5.py 20

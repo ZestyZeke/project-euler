@@ -1,5 +1,0 @@
-#!/bin/bash
-
-# a Simple Bash Script to run my solution
-
-make && ./p6 100 && make clean
