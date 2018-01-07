@@ -52,11 +52,7 @@ public class P5
 
         public static void main(String args[])
         {
-                int bound;
-                if (args.length == 1)
-                        bound = Integer.parseInt(args[0]);
-                else
-                        bound = 20; // TEST
+                int bound = (args.length == 1) ? Integer.parseInt(args[0]) : 20;
 
                 ArrayList<Integer> divisors = generate_divisors(bound);
 

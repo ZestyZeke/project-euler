@@ -88,11 +88,7 @@ public class P3
         public static void main(String args[])
         {
                 long num, largest;
-
-                if (args.length == 1)
-                        num = Long.parseLong(args[0]);
-                else
-                        num = 600851475143L;
+		num = (args.length == 1) ? Long.parseLong(args[0]) : 600851475143L;
 
                 largest = find_largest_pf(num);
 

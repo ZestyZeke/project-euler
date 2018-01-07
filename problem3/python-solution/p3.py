@@ -40,9 +40,9 @@ def find_largest_pf(num):
         largest = max(pfs)
     return largest
 
-def main(args):
-    if len(args) == 2:
-        num = int(args[1])
+if __name__ == "__main__":
+    if len(sys.argv) == 2:
+        num = int(sys.argv[1])
     else:
         num = 600851475143
 
@@ -50,6 +50,3 @@ def main(args):
 
     print("\nThe largest prime factor of the number", num,
           "is:", largest, "\n")
-
-if __name__ == "__main__":
-    main(sys.argv)

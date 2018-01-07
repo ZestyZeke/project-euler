@@ -37,11 +37,11 @@ def difference(n):
         diff *= -1
     return int(diff)
 
-def main(argv):
+if __name__ == "__main__":
     """
     """
-    if len(argv) == 2:
-        n = int(argv[1])
+    if len(sys.argv) == 2:
+        n = int(sys.argv[1])
     else:
         n = 100 # default
 
@@ -50,6 +50,3 @@ def main(argv):
     print ("\nThe difference between the sum of the squares",
            "and the square of the sum of the first", n,
            "natural numbers is:", answer, "\n")
-
-if __name__ == "__main__":
-    main(sys.argv)

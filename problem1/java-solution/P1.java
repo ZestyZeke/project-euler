@@ -14,9 +14,7 @@ public class P1
         {
                 long sum = 0;
                 int i;
-                int bound = 1000; // default
-                if (args.length == 1)
-                        bound = Integer.parseInt(args[0]);
+		int bound = (args.length == 1) ? Integer.parseInt(args[0]) : 1000;
 
                 for (i = 1; i < bound; i++) {
                         if (i % 3 == 0 || i % 5 == 0)

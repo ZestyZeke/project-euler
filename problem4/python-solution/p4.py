@@ -34,9 +34,9 @@ def find_largest_pal(bounds):
                 largest = cur_pal
     return largest
 
-def main(args):
-    if len(args) == 2:
-        num_digits = int(args[1])
+if __name__ == "__main__":
+    if len(sys.argv) == 2:
+        num_digits = int(sys.argv[1])
     else:
         num_digits = 3
 
@@ -44,6 +44,3 @@ def main(args):
     largest = find_largest_pal(bounds)
     print("\nThe largest palindrome that is made from the product of",
           "two {}-digit numbers is: {}\n".format(num_digits, largest))
-
-if __name__ == "__main__":
-    main(sys.argv)

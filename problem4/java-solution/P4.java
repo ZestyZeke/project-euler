@@ -61,11 +61,7 @@ public class P4
         public static void main(String args[])
         {
                 int largest_pal = 0;
-                int num_digits;
-                if (args.length == 1)
-                        num_digits = Integer.parseInt(args[0]);
-                else
-                        num_digits = 3; // default
+                int num_digits = (args.length == 1) ? Integer.parseInt(args[0]) : 3;
 
                 int lower_bound, upper_bound;
                 lower_bound = set_lower(num_digits);

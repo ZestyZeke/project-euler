@@ -1,0 +1,27 @@
+This is the C solution time:
+
+real	0m42.190s
+user	0m42.016s
+sys	0m0.092s
+
+This is the C++ solution time:
+
+real	3m16.786s
+user	3m16.736s
+sys	0m0.024s
+
+This is the java solution time:
+
+real	1m27.619s
+user	1m28.208s
+sys	0m0.088s
+
+This is the python solution time:
+Traceback (most recent call last):
+  File "p10.py", line 33, in <module>
+    print ("\nThe sum of the primes below", bound,
+NameError: name 'bound' is not defined
+
+real	13m17.478s
+user	13m15.360s
+sys	0m2.072s

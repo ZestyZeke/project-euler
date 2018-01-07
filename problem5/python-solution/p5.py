@@ -33,9 +33,9 @@ def find_first_divisible_num(divis, bound):
                 break
     return num
 
-def main(args):
-    if len(args) == 2:
-        bound = int(args[1])
+if __name__ == "__main__":
+    if len(sys.argv) == 2:
+        bound = int(sys.argv[1])
     else:
         bound = 20
 
@@ -45,6 +45,3 @@ def main(args):
 
     print("\nThe smallest positive number that is divisible by all of the",
           "numbers from 1 to {} is: {}\n".format(bound, num))
-
-if __name__ == "__main__":
-    main(sys.argv)

@@ -18,11 +18,7 @@ public class P2
                 int bound;
                 int first, second;
                 long sum;
-
-                if (args.length == 1)
-                        bound = Integer.parseInt(args[0]);
-                else
-                        bound = 4000000; // default
+		int bound = (args.length == 1) ? Integer.parseInt(args[0]) : 4000000;
 
                 first  = 1;
                 second = 1;

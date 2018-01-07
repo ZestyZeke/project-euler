@@ -10,9 +10,9 @@
 
 import sys
 
-def main(args):
-    if len(args) == 2:
-        bound = int(args[1])
+if __name__ == "__main__":
+    if len(sys.argv) == 2:
+        bound = int(sys.argv[1])
     else:
         bound = 4000000 # default
 
@@ -23,13 +23,9 @@ def main(args):
     while second < bound:
         if second % 2 == 0:
             sums += second
-
         third = first + second
         first = second
         second = third
 
     print("\nThe sum of the even-valued Fibonacci numbers under",
           "the bound", bound, "is:", sums, "\n")
-
-if __name__ == "__main__":
-    main(sys.argv)

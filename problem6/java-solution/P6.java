@@ -50,12 +50,8 @@ public class P6
 
         public static void main(String args[])
         {
-                int n;
                 int answer;
-                if (args.length == 1)
-                        n = Integer.parseInt(args[0]);
-                else
-                        n = 100;
+                int n = (args.length == 1) ? Integer.parseInt(args[0]) : 100;
 
                 answer = difference(n);
 
