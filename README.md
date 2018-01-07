@@ -106,15 +106,15 @@ Problem 11
 - [x] Java
 - [x] Python
 
-Below is not updated to current branch
---------------------------------------
-
 Problem 12
 ---------
 - [x] C
 - [x] C++
 - [x] Java
 - [x] Python
+
+Below is not updated to current branch
+--------------------------------------
 
 Problem 13
 ---------
