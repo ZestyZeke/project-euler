@@ -1,0 +1,23 @@
+This is the C solution time:
+
+real	0m0.073s
+user	0m0.052s
+sys	0m0.004s
+
+This is the C++ solution time:
+
+real	0m0.288s
+user	0m0.204s
+sys	0m0.016s
+
+This is the java solution time:
+
+real	0m0.569s
+user	0m1.048s
+sys	0m0.048s
+
+This is the python solution time:
+
+real	0m0.023s
+user	0m0.020s
+sys	0m0.000s

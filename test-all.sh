@@ -5,6 +5,6 @@
 for i in `seq 1 16`;
 do
         cd "problem$i"
-        ./compare
+        ./compare-times.sh
         cd ..
 done
