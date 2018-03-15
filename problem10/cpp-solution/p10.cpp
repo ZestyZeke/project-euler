@@ -9,46 +9,36 @@
 
 #include <iostream>
 #include <vector>
-#include <cmath>
-
-#define		BOUND_DEF	2000000
-
+#include <algorithm>
 using namespace std;
+using ull = unsigned long long;
+const int _BOUND_DEF = 2000000;
 
 vector<int> generate_primes(int bound)
 {
 	vector<int> primes;
 	for (int num = 2; num < bound; num++) {
-		bool isPrime = true;
-		for (auto iter = primes.begin();
-		     iter != primes.end() && isPrime; ++iter) {
-			if (num % *iter == 0)
-				isPrime = false;
-		}
+		bool isPrime = none_of(primes.begin(), primes.end(),
+				[num](const int p) { return num % p == 0; });
 		if (isPrime)
 			primes.push_back(num);
 	}
 	return primes;
 }
 
-unsigned long long sum_primes(vector<int>& primes)
+ull sum_primes(vector<int>& primes)
 {
-	unsigned long long sum = 0;
-	for (auto iter = primes.begin(); iter != primes.end(); ++iter)
-		sum += *iter;
-	return sum;
+	return accumulate(primes.begin(), primes.end(), 0);
 }
 
 int main(int argc, char **argv)
 {
+	ios_base::sync_with_stdio(false);
 	int n;
-	unsigned long long sum;
-	vector<int> primes;
+	(argc == 2) ? (n = stoi(argv[1])) : (n = _BOUND_DEF);
 
-	(argc == 2) ? (n = stoi(argv[1])) : (n = BOUND_DEF);
-
-	primes = generate_primes(n);
-	sum = sum_primes(primes);
+	vector<int> primes = generate_primes(n);
+	ull sum = sum_primes(primes);
 
 	cout << "\nThe sum of the primes below " << n;
 	cout << " is " << sum << "\n\n";

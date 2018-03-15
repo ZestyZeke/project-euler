@@ -8,47 +8,32 @@
  */
 
 #include <iostream>
+#include <vector>
+#include <algorithm>
 #define 	TEST	    10
 #define         DEFAULT     100
-#define         SQR(x)      ((x)*(x))
 using namespace std;
 
-/*
- * Polynomial expresssion for
- * sum of first n squares
- */
-int sum_of_squares(int n)
+int difference(const int n)
 {
-        return n * (n + 1) * (2 * n + 1) / 6;
-}
-
-/*
- * nth triangular number is equal to sum of first n
- * natural numbers
- */
-int square_of_sum(int n)
-{
-        int triangle;
-        triangle = (SQR(n) + n) / 2;
-        return SQR(triangle);
-}
-
-int difference(int n)
-{
-        int diff;
-        diff = sum_of_squares(n) - square_of_sum(n);
-        if (diff < 0)
-                diff *= -1;
-        return diff;
+	vector<int> nums (n);
+	vector<int> sqrs (n);
+	iota(nums.begin(), nums.end(), 1);
+	transform(nums.begin(), nums.end(), sqrs.begin(),
+			[](const int n) { return n * n; });
+	int diff = accumulate(nums.begin(), nums.end(), 0);
+	diff = diff * diff - accumulate(sqrs.begin(), sqrs.end(), 0);
+	if (diff < 0) diff *= -1;
+	return diff;
 }
 
 int main(int argc, char **argv)
 {
+	ios_base::sync_with_stdio(false);
         int n;
-        int answer;
         (argc == 2) ? (n = stoi(argv[1])) : (n = DEFAULT);
 
-        answer = difference(n);
+	int answer = difference(n);
 
         cout << "\nThe difference between the sum of the squares";
         cout << " and the square of the sum of the first " << n;

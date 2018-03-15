@@ -26,13 +26,13 @@ int find_c(int a, int b)
 
 int main(int argc, char **argv)
 {
+	ios_base::sync_with_stdio(false);
 	int sum;
-	int a, b, c;
-	int product;
+	int a = 0, b = 0, c = 0;
 
 	(argc == 2) ? (sum = stoi(argv[1])) : (sum = SUM_LIMIT);
 
-	product = -1;
+	int product = -1;
 	for (a = 1; a < sum; a++) {
 		for (b = 1; b < sum; b++) {
 			c = find_c(a, b);

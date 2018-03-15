@@ -110,14 +110,12 @@ int vert(int mat[][SIZE], int size)
 
 void process_file(int mat[][SIZE], int size)
 {
-	int i, j;
-	string line;
-
 	ifstream infile("../20x20-grid.txt");
 	if (infile.is_open()) {
-		for (i = 0; getline(infile, line); i++) {
+		string line;
+		for (int i = 0; getline(infile, line); i++) {
 			istringstream iss(line);
-			for (j = 0; j < size; j++) {
+			for (int j = 0; j < size; j++) {
 				string num;
 				iss >> num;
 				mat[i][j] = stoi(num);
@@ -129,17 +127,15 @@ void process_file(int mat[][SIZE], int size)
 
 int main()
 {
-	int size;
-	size = SIZE;
+	ios_base::sync_with_stdio(false);
+	int size = SIZE;
 	int mat[SIZE][SIZE];
-	int largest_adj;
-	int temp;
 
 	process_file(mat, size);
 
-	largest_adj = diag1(mat, size);
+	int largest_adj = diag1(mat, size);
 
-	temp = diag2(mat, size);
+	int temp = diag2(mat, size);
 	if (temp > largest_adj) largest_adj = temp;
 
 	temp = horiz(mat, size);

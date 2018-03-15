@@ -9,6 +9,8 @@
  */
 
 #include <iostream>
+#include <fstream>
+#include <sstream>
 
 #define		BUF_SIZE	2048
 #define		ADJACENT	13
@@ -25,17 +27,16 @@ long long find_product(char *buf_pos, int adj)
 
 int main(int argc, char **argv)
 {
+	ios_base::sync_with_stdio(false);
 	char buffer[BUF_SIZE];
-	FILE *fp;
 	int i;
 	int adj;
 	long long largest_product, curr_product;
 
 	(argc == 2) ? (adj = stoi(argv[1])) : (adj = ADJACENT);
 
-	fp = fopen("../100-digit-number.txt", "r");
-	fgets(buffer, BUF_SIZE, fp);
-	fclose(fp);
+	ifstream file ("../100-digit-number.txt", ios::in);
+	file.read(buffer, BUF_SIZE);
 
 	largest_product = -1;
 	for (i = 0; buffer[i + adj] != '\0'; i++) {

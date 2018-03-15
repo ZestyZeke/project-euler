@@ -9,14 +9,12 @@
 
 #include <iostream>
 #include <list>
+#include <vector>
 #include <cmath>
-#define 	BOUND 		10001
+#include <algorithm>
 
 using namespace std;
-
-int generate_upper(int n);
-void generate_nums(list<int>& nums, int bound);
-int sieve(list<int>& nums, int n);
+const int _BOUND = 10001;
 
 int generate_upper(int n)
 {
@@ -26,27 +24,24 @@ int generate_upper(int n)
 	return (int) (term1 + term2);
 }
 
-void generate_nums(list<int>& nums, int bound)
+list<int> generate_nums(int bound)
 {
-	for (int i = 2; i < bound; i++)
-		nums.push_back(i);
+	list<int> nums (bound - 2);
+	iota(nums.begin(), nums.end(), 2);
+	return nums;
 }
 
 int sieve(list<int>& nums, int n)
 {
-	int temp_n, temp_prime;
-
-	temp_n = 1;
+	int temp_prime = 1;
+	int temp_n = 1;
 	for (auto i1 = nums.begin(); i1 != nums.end() && temp_n <= n; ++i1) {
 		temp_prime = *i1;
 		for (auto i2 = next(i1); i2 != nums.end(); ) {
-			if (*i2 % temp_prime == 0) {
-				auto i_temp = i2;
+			if (*i2 % temp_prime == 0)
+				i2 = nums.erase(i2);
+			else
 				++i2;
-				nums.erase(i_temp);
-			} else {
-				++i2;
-			}
 		}
 		temp_n++;
 	}
@@ -55,18 +50,13 @@ int sieve(list<int>& nums, int n)
 
 int main(int argc, char **argv)
 {
+	ios_base::sync_with_stdio(false);
 	int n;
-	int upperbound;
-	int nth_prime;
-	list<int> nums;
+	(argc == 2) ? (n = stoi(argv[1])) : (n = _BOUND);
 
-	(argc == 2) ? (n = stoi(argv[1])) : (n = BOUND);
-
-	upperbound = generate_upper(n);
-
-	generate_nums(nums, upperbound);
-
-	nth_prime = sieve(nums, n);
+	int upperbound = generate_upper(n);
+	list<int> nums = generate_nums(upperbound);
+	int nth_prime  = sieve(nums, n);
 
 	cout << "\nThe " << n << "th prime number is " << nth_prime << "\n\n";
 

@@ -10,19 +10,18 @@
 
 #include <iostream>
 #include <vector>
-#define             TEST        10
-#define             DEFAULT     20
+#include <algorithm>
 using namespace std;
+using ull = unsigned long long;
+const ull _TEST = 10;
+const ull _DEFAULT = 20;
 
 vector<int> generate_divisors(const int bound)
 {
         vector<int> divis;
-
-        int num, i;
-        bool redundant;
-        for (num = 1; num <= bound; num++) {
-                redundant = false;
-                for (i = num + 1; i <= bound; i++) {
+        for (int num = 1; num <= bound; num++) {
+                bool redundant = false;
+                for (int i = num + 1; i <= bound; i++) {
                         if (i % num == 0) {
                                 redundant = true;
                                 break;
@@ -31,36 +30,30 @@ vector<int> generate_divisors(const int bound)
                 if (!redundant)
                         divis.push_back(num);
         }
-
         return divis;
 }
 
-long long find_first_divisible_num(const vector<int> divisors, const int bound)
+ull find_first_divisible_num(const vector<int> divisors, const int bound)
 {
-        long long num = (long long) bound;
+        ull num = (ull) bound;
         bool found = false;
 
         while (!found && num++) {
-                found = true;
-                for (auto it = divisors.begin(); it != divisors.end(); ++it) {
-                        if (num % *it != 0) {
-                                found = false;
-                                break;
-                        }
-                }
+		found = all_of(divisors.begin(), divisors.end(),
+				[num](const int d) { return num % d == 0; });
         }
-
         return num;
 }
 
 int main(int argc, char **argv)
 {
+	ios_base::sync_with_stdio(false);
         int bound;
-        (argc == 2) ? (bound = atoi(argv[1])) : (bound = DEFAULT);
+        (argc == 2) ? (bound = atoi(argv[1])) : (bound = _DEFAULT);
 
         vector<int> divisors = generate_divisors(bound);
 
-        long long num = find_first_divisible_num(divisors, bound);
+        ull num = find_first_divisible_num(divisors, bound);
 
         cout<<"\nThe smallest positive number that is divisible by all of";
         cout<<" the numbers from 1 to "<<bound<<" is: "<<num<<"\n\n";
